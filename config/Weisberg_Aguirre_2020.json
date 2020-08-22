@@ -1,0 +1,28 @@
+[
+{
+		"flavor": "",
+		"hook": "",
+		"importance": "",
+		"localHookTemplate": "config/Weisberg_Aguirre_2020LocalHookTemplate.m",
+		"name": "Weisberg_Aguirre_2020",
+		"pathPlacement": "append",
+		"subfolder": "",
+		"toolboxRoot": "#",
+		"type": "git",
+		"update": "",
+		"url": "https:\/\/www.github.com\/smweis\/Weisberg_Aguirre_2020.git"
+	},
+{
+		"flavor": "",
+		"hook": "",
+		"importance": "",
+		"localHookTemplate": "",
+		"name": "qpfmri",
+		"pathPlacement": "append",
+		"subfolder": "",
+		"toolboxRoot": "",
+		"type": "include",
+		"update": "",
+		"url": ""
+	}
+]
