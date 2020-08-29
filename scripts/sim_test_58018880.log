@@ -1,0 +1,326 @@
+/blue/stevenweisberg/stevenweisberg/MATLAB/projects/Weisberg_Aguirre_2020/scripts
+c10a-s16.ufhpc
+Sat Aug 29 15:53:02 EDT 2020
+------------------------------------------
+Setting up environment variables
+---
+LD_LIBRARY_PATH is .:/apps/matlab/mcr/2020a/v98/runtime/glnxa64:/apps/matlab/mcr/2020a/v98/bin/glnxa64:/apps/matlab/mcr/2020a/v98/sys/os/glnxa64:/apps/matlab/mcr/2020a/v98/sys/opengl/lib/glnxa64
+Warning: Executing startup failed in matlabrc.
+This indicates a potentially serious problem in your MATLAB setup, which should be resolved as soon as possible.  Error detected was:
+MATLAB:mpath:PathAlterationNotSupported
+Modifying the search path is not supported by MATLAB Compiler. Remove functions that modify the search path from your MATLAB code. To make files visible to your deployed application, add the parent folder to your MATLAB session.
+Warning: Simulated psychometric parameters will result in minimum values below 0.
+Min possible value = 0.00
+> In simulate (line 342)
+  In compiledSimulate (line 279)
+Initializing Q+. This may take a minute...
+Elapsed time is 9.143821 seconds.
+Simulated parameters:
+slope: 0.410 semiSat: 0.570 beta: 1.000 sigma: 0.150 
+
+Trial 1: Initial baseline
+Stimulus: 0.010
+Output value 0.000
+Entropy after last trial: 12.615
+
+Q+ parameters
+slope: 0.063 semiSat: 0.670 beta: 0.750 sigma: 4.000 
+maxBOLD estimate = 1.000
+
+
+Trial 2: Initial max BOLD
+Stimulus: 1.000
+Output value 1.350
+Entropy after last trial: 10.208
+
+Q+ parameters
+slope: 0.063 semiSat: 0.670 beta: 1.250 sigma: 4.000 
+maxBOLD estimate = 1.000
+
+
+Trial 3: Initial baseline
+Stimulus: 0.010
+Output value -0.188
+Entropy after last trial: 8.070
+
+Q+ parameters
+slope: 0.063 semiSat: 0.670 beta: 1.250 sigma: 0.500 
+maxBOLD estimate = 1.250
+
+
+Trial 4: Initial max BOLD
+Stimulus: 1.000
+Output value 1.727
+Entropy after last trial: 8.480
+
+Q+ parameters
+slope: 0.081 semiSat: 0.560 beta: 1.062 sigma: 0.500 
+maxBOLD estimate = 1.562
+
+
+Trial 5: Initial baseline
+Stimulus: 0.010
+Output value 0.141
+Entropy after last trial: 7.954
+
+Q+ parameters
+slope: 0.063 semiSat: 0.670 beta: 1.062 sigma: 0.500 
+maxBOLD estimate = 1.660
+
+
+Trial 6: Initial max BOLD
+Stimulus: 1.000
+Output value 1.576
+Entropy after last trial: 7.345
+
+Q+ parameters
+slope: 0.063 semiSat: 0.670 beta: 1.016 sigma: 0.500 
+maxBOLD estimate = 1.764
+
+
+Trial 7: Q+ Stimulus Selection
+Stimulus: 0.588
+Output value 1.008
+Entropy after last trial: 3.913
+
+Q+ parameters
+slope: 0.227 semiSat: 0.560 beta: 0.938 sigma: 0.500 
+maxBOLD estimate = 1.791
+
+
+Trial 8: Q+ Stimulus Selection
+Stimulus: 0.505
+Output value 0.260
+Entropy after last trial: 3.103
+
+Q+ parameters
+slope: 0.293 semiSat: 0.560 beta: 0.969 sigma: 0.500 
+maxBOLD estimate = 1.680
+
+
+Trial 9: Q+ Stimulus Selection
+Stimulus: 0.629
+Output value 1.388
+Entropy after last trial: 2.758
+
+Q+ parameters
+slope: 0.293 semiSat: 0.560 beta: 1.016 sigma: 0.500 
+maxBOLD estimate = 1.627
+
+
+Trial 10: Initial baseline
+Stimulus: 0.010
+Output value 0.128
+Entropy after last trial: 2.165
+
+Q+ parameters
+slope: 0.293 semiSat: 0.560 beta: 0.969 sigma: 0.500 
+maxBOLD estimate = 1.652
+
+
+Trial 11: Q+ Stimulus Selection
+Stimulus: 0.629
+Output value 1.551
+Entropy after last trial: 2.928
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 0.969 sigma: 0.500 
+maxBOLD estimate = 1.601
+
+
+Trial 12: Q+ Stimulus Selection
+Stimulus: 0.629
+Output value 1.465
+Entropy after last trial: 2.600
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 0.984 sigma: 0.500 
+maxBOLD estimate = 1.551
+
+
+Trial 13: Q+ Stimulus Selection
+Stimulus: 0.588
+Output value 1.196
+Entropy after last trial: 2.494
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 1.031 sigma: 0.500 
+maxBOLD estimate = 1.527
+
+
+Trial 14: Q+ Stimulus Selection
+Stimulus: 0.546
+Output value 0.310
+Entropy after last trial: 1.596
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 0.984 sigma: 0.500 
+maxBOLD estimate = 1.574
+
+
+Trial 15: Initial baseline
+Stimulus: 0.010
+Output value 0.122
+Entropy after last trial: 1.703
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 0.984 sigma: 0.500 
+maxBOLD estimate = 1.550
+
+
+Trial 16: Q+ Stimulus Selection
+Stimulus: 0.670
+Output value 1.381
+Entropy after last trial: 1.597
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 0.984 sigma: 0.500 
+maxBOLD estimate = 1.525
+
+
+Trial 17: Q+ Stimulus Selection
+Stimulus: 0.711
+Output value 1.419
+Entropy after last trial: 2.266
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 0.984 sigma: 0.500 
+maxBOLD estimate = 1.502
+
+
+Trial 18: Q+ Stimulus Selection
+Stimulus: 0.588
+Output value 0.946
+Entropy after last trial: 1.217
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 1.000 sigma: 0.500 
+maxBOLD estimate = 1.478
+
+
+Trial 19: Q+ Stimulus Selection
+Stimulus: 0.670
+Output value 1.339
+Entropy after last trial: 1.050
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 0.984 sigma: 0.500 
+maxBOLD estimate = 1.478
+
+
+Trial 20: Initial baseline
+Stimulus: 0.010
+Output value 0.116
+Entropy after last trial: 1.254
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 1.000 sigma: 0.500 
+maxBOLD estimate = 1.455
+
+
+Trial 21: Q+ Stimulus Selection
+Stimulus: 0.670
+Output value 1.397
+Entropy after last trial: 1.378
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 1.000 sigma: 0.500 
+maxBOLD estimate = 1.455
+
+
+Trial 22: Q+ Stimulus Selection
+Stimulus: 0.670
+Output value 1.455
+Entropy after last trial: 0.787
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 1.000 sigma: 0.500 
+maxBOLD estimate = 1.455
+
+
+Trial 23: Q+ Stimulus Selection
+Stimulus: 0.588
+Output value 1.048
+Entropy after last trial: 0.639
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 1.000 sigma: 0.500 
+maxBOLD estimate = 1.455
+
+
+Trial 24: Q+ Stimulus Selection
+Stimulus: 0.588
+Output value 0.989
+Entropy after last trial: 0.536
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 1.000 sigma: 0.500 
+maxBOLD estimate = 1.455
+
+
+Trial 25: Initial baseline
+Stimulus: 0.010
+Output value 0.172
+Entropy after last trial: 1.027
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 0.984 sigma: 0.500 
+maxBOLD estimate = 1.455
+
+
+Trial 26: Q+ Stimulus Selection
+Stimulus: 0.670
+Output value 1.547
+Entropy after last trial: 0.339
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 1.000 sigma: 0.500 
+maxBOLD estimate = 1.432
+
+
+Trial 27: Q+ Stimulus Selection
+Stimulus: 0.588
+Output value 0.917
+Entropy after last trial: 0.262
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 1.000 sigma: 0.500 
+maxBOLD estimate = 1.432
+
+
+Trial 28: Q+ Stimulus Selection
+Stimulus: 0.670
+Output value 1.490
+Entropy after last trial: 0.277
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 1.000 sigma: 0.500 
+maxBOLD estimate = 1.432
+
+
+Trial 29: Q+ Stimulus Selection
+Stimulus: 0.588
+Output value 1.089
+Entropy after last trial: 0.353
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 1.000 sigma: 0.500 
+maxBOLD estimate = 1.432
+
+
+Trial 30: Initial baseline
+Stimulus: 0.010
+Output value 0.229
+Entropy after last trial: 0.922
+
+Q+ parameters
+slope: 0.378 semiSat: 0.560 beta: 1.000 sigma: 0.500 
+maxBOLD estimate = 1.432
+
+--------------------------------------------------------------
+FINAL VALUES
+--------------------------------------------------------------
+Simulated parameters:              slope: 0.410 semiSat: 0.570 beta: 1.000 sigma: 0.150 
+Max posterior QUEST+ parameters:   slope: 0.378 semiSat: 0.560 beta: 1.000 sigma: 0.500 
+Max BADS parameters:               slope: 0.557 semiSat: 0.574 beta: 0.999 sigma: 0.500 
+maxBOLD estimate: 1.422
