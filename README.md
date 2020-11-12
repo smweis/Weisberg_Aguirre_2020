@@ -8,7 +8,7 @@ Suggested: `/blue/stevenweisberg/stevenweisberg/qpFmriResults/compiled[date]`
 5. Load the project with ToolboxToolbox and compile the code.
 ```
   tbUseProject('Weisberg_Aguirre_2020');
-  mcc -R -singleCompThread -d /blue/stevenweisberg/stevenweisberg/qpFmriResults/compiled[date] -m compiledSimulate.m -a ../../toolboxes/bads/ -a ../../toolboxes/qpfmri/models
+  mcc -R -singleCompThread -d /blue/stevenweisberg/stevenweisberg/qpfMRIResults/compiled[date] -m compiledSimulate.m -a ../../toolboxes/bads/ -a ../../toolboxes/qpfmri/models
 ```
 Note: the Bayesian Adaptive search package appears to require being added in full, otherwise it does not load all required functions to the compiled version.
 
