@@ -136,12 +136,12 @@ Introductory text placeholder.
 \hypertarget{approach}{%
 \subsection{Approach}\label{approach}}
 
-As a proof of principle, we selected to model primary visual cortical function using a logistic model (Equation 1). We selected this model because it is relatively simple (only two parameters vary between 0 and 1) and because it can be used to model a neurometric function. That is, a logistic function can model the increasing neural signal in response to an increase in stimulus contrast. Let \emph{slope} equal the slope of the curve at the semi-saturation point. Let \emph{semiSat} equal the point on the x-axis at which the y-axis reaches 50\%.Let \(x_0\) be the value of a stimulus. Then, the logistic function is defined as:
+Does the qpfMRI approach yield improved fit over random stimulus selection? As a proof of principle, we created a forward of model primary visual cortical function using a logistic model (Equation 1). We selected this model because it is relatively simple (only two parameters vary between 0 and 1) and because logistic functions would be a plausible model for visual cortex (e.g., in response to light flickering at varying frequencies) and thus would make a good neurometric function. That is, a logistic function can model the increasing neural signal in response to an increase in stimulus flicker. Let \emph{slope} equal the slope of the curve at the semi-saturation point. Let \emph{semiSat} equal the point on the x-axis at which the y-axis reaches 50\%.Let \(x_0\) be the value of a stimulus. Then, the logistic function is defined as:
 \begin{equation}
   y_0 = 1-\frac{1}{(e^{(slope*(x_0-semiSat)})}
   \end{equation}
-Our overall aim was to develop a closed-loop pipeline, starting from known model parameters and resulting in an estimate of those same parameters from simulated BOLD fMRI data. The broad steps were as follows. 1) Select a set of model parameters for the logistic function. 2) Simulate BOLD fMRI data in response to stimuli based on the known model parameters. 3) Model the (noisy) BOLD fMRI data to obtain estimates of the BOLD response for each trial. 4) Select the next stimulus based on either random stimulus selection (control) or applying Q+ to the responses.
-In developing simulations to achieve this goal, we solve several problems in applying Q+ to BOLD fMRI data. To wit: BOLD fMRI data are (1) continuous, (2) noisy, (3) unitless, (4) have a maximum response that is unknown \emph{a priori} and (5) are subject to low-frequency temporal variation. We address each of these in turn, but first provide a general overview of Q+.
+We developed a closed-loop pipeline, starting from known model parameters and resulting in an estimate of those same parameters from simulated BOLD fMRI data. The broad steps were as follows. 1) Select a set of model parameters for the logistic function. 2) Simulate BOLD fMRI data in response to stimuli based on the known model parameters. 3) Use a forward model to generate simulated BOLD fMRI data. 4) Use a reverse model to obtain estimates of the BOLD response for each trial. 4) Select the next stimulus based on either random stimulus selection (control) or applying Q+ to the responses.
+In developing simulations to achieve this goal, we solved several problems in applying Q+ to BOLD fMRI data. To wit: BOLD fMRI data are (1) continuous, (2) noisy, (3) unitless, (4) have a maximum response that is unknown \emph{a priori} and (5) are subject to low-frequency temporal variation. We address each of these in turn, but first provide a general overview of Q+.
 
 \hypertarget{quest}{%
 \subsection{Quest +}\label{quest}}
@@ -151,7 +151,7 @@ Q+ (David H. Brainard, 2017; Watson, 2017) is a multidimensional Bayesian method
 \hypertarget{challenge-1-the-bold-signal-is-continuous}{%
 \subsubsection{Challenge 1: The BOLD signal is continuous}\label{challenge-1-the-bold-signal-is-continuous}}
 
-Q+ operates over discrete categorical outcomes, such as selecting amongst a set of color names for a stimulus. For stimuli in the middle of the red spectrum, roughly 100\% of responses will be ``red.'' But as the color patch drifts closer to yellow, this percentage will decrease. But the `outcomes' for the BOLD fMRI signal are continuous. There is no principled way to divide the BOLD signal up into categories, and arbitrarily small categories will increase computation time dramatically. To solve this, we define a set of, for example, 51 outcome categories onto which we map the amplitude of the BOLD response.
+Q+ operates over discrete categorical outcomes, such as selecting amongst a set of color names for a stimulus. For stimuli in the middle of the red spectrum, roughly 100\% of responses will be ``red.'' But as the color patch drifts closer to yellow, this percentage will decrease. But the `outcomes' for the BOLD fMRI signal are continuous. There is no principled way to divide the BOLD signal up into categories, and arbitrarily small categories will increase computation time dramatically. To solve this, we define a fixed number of outcome categories onto which we map the amplitude of the BOLD response.
 
 \hypertarget{challenge-2-the-bold-signal-is-noisy-and-outcomes-are-sparse}{%
 \subsubsection{Challenge 2: The BOLD signal is noisy and outcomes are sparse}\label{challenge-2-the-bold-signal-is-noisy-and-outcomes-are-sparse}}
@@ -166,7 +166,7 @@ Q+ operates on outcomes with defined boundaries. The BOLD fMRI signal is unitles
 \hypertarget{challenge-4-the-maximum-response-is-not-known-a-priori}{%
 \subsubsection{\texorpdfstring{Challenge 4: The maximum response is not known \emph{a priori}}{Challenge 4: The maximum response is not known a priori}}\label{challenge-4-the-maximum-response-is-not-known-a-priori}}
 
-Similarly, the maximum possible response is not known \emph{a priori} a must be calculated from the neurometric curve. Again, Q+ operates on outcomes with defined boundaries, so we must impose a possible range on the BOLD signal from baseline to maximum. To solve this, the outcome algorithm adjusts the mapping of BOLD fMRI response to the outcome categories, updating an estimate of maximum BOLD response.
+Similarly, the maximum possible response is not known \emph{a priori} and must be calculated from the neurometric curve. Again, Q+ operates on outcomes with defined boundaries, so we must impose a possible range on the BOLD signal from baseline to maximum. To solve this, the outcome algorithm adjusts the mapping of BOLD fMRI response to the outcome categories, updating an estimate of maximum BOLD response.
 
 \hypertarget{challenge-5-bold-fmri-data-are-subject-to-low-frequency-temporal-noise}{%
 \subsubsection{Challenge 5: BOLD fMRI data are subject to low-frequency temporal noise}\label{challenge-5-bold-fmri-data-are-subject-to-low-frequency-temporal-noise}}
@@ -181,7 +181,7 @@ The QPfMRI pipeline is detailed in Figure 1. We describe the pipeline with simul
 \newpage
 \begin{figure}
 
-{\centering \includegraphics[width=650px]{figures/Figure1} 
+{\centering \includegraphics[width=300px]{figures/Figure1} 
 
 }
 
@@ -198,13 +198,20 @@ The QPfMRI pipeline is detailed in Figure 1. We describe the pipeline with simul
 \hypertarget{forward-model}{%
 \subsubsection{Forward model}\label{forward-model}}
 
-TFE, autocorrelated noise, HRF.
+For the forward model, we selected sample parameters that we expected to be well behaved (e.g., yield values between 0 and 1 for most of their range). Our choice of logistic function parameters and the domain of possible parameter values to search through were fixed through all simulations except where otherwise noted.
+We explain the flow of data using random stimulus selection. First, a random set of stimulus values is chosen of length \emph{N} (where N is the number of trials in the experiment). We also enforce a set number of baseline trials (where the expected BOLD response will be minimal) and maximum BOLD trials (where the expected BOLD signal will be maximal). Next, each stimulus value is passed to the logistic function using our chosen function parameters. The output of that function (which has been normalized to be between 0 for baseline and 1 for maximum response) is then convolved with a canonical hemodynamic response function and adding 1/f noise (pink noise, consistent with BOLD signal). We also add white noise to the simulated timeseries (the amount of white noise varied across simulations). The resulting continuous timeseries is then downsampled to match the number of TRs per trial in the simulation and mean-centered. These steps were implemented with the temporal fitting engine (\url{https://github.com/gkaguirrelab/temporalFittingEngine}).
 
 \hypertarget{reverse-model}{%
 \subsubsection{Reverse model}\label{reverse-model}}
 
-GLM and fitting
+In the real-time simulation, the continuous timeseries is fed into the reverse model one trial at a time. Each pass through the reverse model, the signal is mean-centered. The timeseries is also reference coded, meaning all baseline trials are averaged and that average is subtracted from the rest of the timeseries so that the minimum value (theoretically) is zero. Next, we apply a general linear model (GLM) in which the baseline trials are the baseline and every other trial is represented as a boxcar (a vector of length \emph{N*t} with zeros everywhere except the cells for that trial, which contain ones). The GLM is fit to the timeseries and the betas returned are then assigned to outcome categories. At the end of each trial, the logistic function parameter values are estimated and compared to the veridical logistic function parameters.
 Timeseries cleaning (baseline and max BOLD), assigning outcomes, high-pass and low-pass filtering, removing linear drift, mean-centering.
+
+\hypertarget{q-stimulus-selection}{%
+\subsubsection{Q+ stimulus selection}\label{q-stimulus-selection}}
+
+In behavioral experiments, the combinations of parameters are those that define the model. Due to the challenges listed above for fMRI, two additional parameters are searched for by Q+, which we call \emph{sigma} and \emph{beta}. Sigma can be thought of as the estimate of the noise in the BOLD fMRI signal, though it is implemented as the spread along the possible outcome categories (e.g., a small value of sigma means that one stimulus value will correspond to only a few possible outcome categories). Beta is a scaling parameter that is used to help estimate what the maximum BOLD response is and approaches 1 as the maximum BOLD response is better estimated.
+For each stimulus - outcome category pair, Q+ updates the log-likelihood for all possible combinations of parameters. Depending on the previous stimuli, Q+ will select the next stimulus by determining which result will most reduce the remaining entropy in the set of parameter combinations.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
