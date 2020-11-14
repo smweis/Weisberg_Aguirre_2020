@@ -10,10 +10,10 @@ do
       do
         for TR in 800 1600
         do
-          sbatch deploy_sim.sh $nOutcomes $noise $trialLength $TR false random_${nOutcomes}_nOutcomes_${noise}_noise_${RUN}
-          sleep .1
-          sbatch deploy_sim.sh $nOutcomes $noise $trialLength $TR true qpControl_${nOutcomes}_nOutcomes_${noise}_noise_${RUN}
-          sleep .1
+          sbatch deploy_sim.sh $nOutcomes $noise $trialLength $TR false random_${nOutcomes}_nOutcomes_${noise}_noise_${TR}_TR_${trialLength}_trialLength_${RUN}
+          sleep .05
+          sbatch deploy_sim.sh $nOutcomes $noise $trialLength $TR true qpControl_${nOutcomes}_nOutcomes_${noise}_noise_${TR}_TR_${trialLength}_trialLength_${RUN}
+          sleep .05
         done
       done
     done

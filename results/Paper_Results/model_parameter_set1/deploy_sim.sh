@@ -6,7 +6,7 @@
 #SBATCH --ntasks=1                    # Run on a single CPU
 #SBATCH --mem=8gb                     # Job memory request
 #SBATCH --time=04:00:00               # Time limit hrs:min:sec
-#SBATCH --output=model_parameter_set1%A.log   # Standard output and error log
+#SBATCH --output=model_parameter_set1_%A.log   # Standard output and error log
 
 
 sleep 1
@@ -24,6 +24,7 @@ outFolder='model_parameter_set1'
 cd /blue/stevenweisberg/stevenweisberg/qpfMRIResults/compiled.$d
 # Make copies of the deploy_sim and sim_wrapper scripts for reproducibility
 # Save them with the results
+mkdir /blue/stevenweisberg/stevenweisberg/qpfMRIResults/$outFolder/
 cp /blue/stevenweisberg/stevenweisberg/qpfMRIResults/deploy_sim.sh /blue/stevenweisberg/stevenweisberg/qpfMRIResults/$outFolder/
 cp /blue/stevenweisberg/stevenweisberg/qpfMRIResults/sim_wrapper.sh /blue/stevenweisberg/stevenweisberg/qpfMRIResults/$outFolder/
 
