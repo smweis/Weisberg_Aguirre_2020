@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.6)  6 NOV 2020 17:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.6)  19 NOV 2020 17:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -765,44 +765,85 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 dftex.map}
 
 ] [2] [3] [4] [5] [6]
-<figures/Figure1.png, id=185, 1859.9889pt x 1813.977pt>
+<figures/Figure1.png, id=197, 1859.9889pt x 1813.977pt>
 File: figures/Figure1.png Graphic file (type png)
 <use figures/Figure1.png>
 Package pdftex.def Info: figures/Figure1.png  used on input line 184.
 (pdftex.def)             Requested size: 301.12357pt x 293.67445pt.
-[7 <./figures/Figure1.png>] [8]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[7 <./figures/Figure1.png>] [8] [9] [10]
+<../results/figs/fig1_7Outcomes_15Noise_12trialLength_800TR.png, id=230, 1264.7
+25pt x 735.4677pt>
+File: ../results/figs/fig1_7Outcomes_15Noise_12trialLength_800TR.png Graphic fi
+le (type png)
+<use ../results/figs/fig1_7Outcomes_15Noise_12trialLength_800TR.png>
+Package pdftex.def Info: ../results/figs/fig1_7Outcomes_15Noise_12trialLength_8
+00TR.png  used on input line 246.
+(pdftex.def)             Requested size: 501.86703pt x 291.84763pt.
 
-[9] [10] [11] AED endfloat: Processing end Figures and Tables [12pdfTeX warning
- (ext4): destination with the same identifier (name{ref-davidh.brainardMQUESTPl
-usMatlabImplementation2017}) has been already used, duplicate ignored
+Overfull \hbox (32.11201pt too wide) in paragraph at lines 246--247
+ [][] 
+ []
+
+[11 <../results/figs/fig1_7Outcomes_15Noise_12trialLength_800TR.png (PNG copy)>
+]
+<../results/figs/fig2_7Outcomes_15Noise_12trialLength_800TR.png, id=236, 421.57
+5pt x 316.3017pt>
+File: ../results/figs/fig2_7Outcomes_15Noise_12trialLength_800TR.png Graphic fi
+le (type png)
+<use ../results/figs/fig2_7Outcomes_15Noise_12trialLength_800TR.png>
+Package pdftex.def Info: ../results/figs/fig2_7Outcomes_15Noise_12trialLength_8
+00TR.png  used on input line 261.
+(pdftex.def)             Requested size: 421.59969pt x 316.32022pt.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+72.
+(c:/Users/smwei/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [12 <../results/figs/fig2_7Outcomes_15Noise_12trialLength_800TR.png (PNG copy
+)>]
+<../results/figs/fig3_7Outcomes_15Noise_12trialLength_800TR.png, id=243, 1264.7
+25pt x 735.4677pt>
+File: ../results/figs/fig3_7Outcomes_15Noise_12trialLength_800TR.png Graphic fi
+le (type png)
+<use ../results/figs/fig3_7Outcomes_15Noise_12trialLength_800TR.png>
+Package pdftex.def Info: ../results/figs/fig3_7Outcomes_15Noise_12trialLength_8
+00TR.png  used on input line 280.
+(pdftex.def)             Requested size: 501.86703pt x 291.84763pt.
+
+Overfull \hbox (32.11201pt too wide) in paragraph at lines 280--281
+ [][] 
+ []
+
+[13 <../results/figs/fig3_7Outcomes_15Noise_12trialLength_800TR.png (PNG copy)>
+] [14] [15] AED endfloat: Processing end Figures and Tables [16pdfTeX warning (
+ext4): destination with the same identifier (name{ref-davidh.brainardMQUESTPlus
+MatlabImplementation2017}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.289 \end{document}
+l.358 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{ref-watsonQUESTGeneralMultidimensional2017}) has been already used, dupl
 icate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.289 \end{document}
+l.358 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{ref-watsonQuestBayesianAdaptive1983}) has been already used, duplicate i
 gnored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.289 \end{document}
+l.358 \end{document}
                     ] (./qpfMRI_Manuscript.aux)
 Package rerunfilecheck Info: File `qpfMRI_Manuscript.out' has not changed.
-(rerunfilecheck)             Checksum: DB9B8DE3F5757B81CAC0DD38C88E483B;12522.
+(rerunfilecheck)             Checksum: 7781D70DB3A24375DCA5D691BAFB8F68;13069.
  ) 
 Here is how much of TeX's memory you used:
- 14189 strings out of 481433
- 214593 string characters out of 5918820
- 524090 words of memory out of 5000000
- 30603 multiletter control sequences out of 15000+600000
- 586842 words of font info for 66 fonts, out of 8000000 for 9000
+ 14277 strings out of 481433
+ 217173 string characters out of 5918820
+ 525236 words of memory out of 5000000
+ 30670 multiletter control sequences out of 15000+600000
+ 587160 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 80i,11n,85p,1867b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 80i,11n,85p,1867b,403s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/smwei/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.e
 nc}{c:/Users/smwei/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.
 enc}{c:/Users/smwei/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ma
@@ -819,11 +860,12 @@ yTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/smwei/AppData/Roamin
 g/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb><c:/Users/smwei/AppData/Ro
 aming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/smwei/AppDat
 a/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/smwei/A
-ppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on qpfMRI_Manuscript.pdf (12 pages, 1248031 bytes).
+ppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/smw
+ei/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on qpfMRI_Manuscript.pdf (16 pages, 2486246 bytes).
 PDF statistics:
- 308 PDF objects out of 1000 (max. 8388607)
- 277 compressed objects within 3 object streams
- 81 named destinations out of 1000 (max. 500000)
- 262 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 355 PDF objects out of 1000 (max. 8388607)
+ 315 compressed objects within 4 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 301 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -213,10 +213,79 @@ Timeseries cleaning (baseline and max BOLD), assigning outcomes, high-pass and l
 In behavioral experiments, the combinations of parameters are those that define the model. Due to the challenges listed above for fMRI, two additional parameters are searched for by Q+, which we call \emph{sigma} and \emph{beta}. Sigma can be thought of as the estimate of the noise in the BOLD fMRI signal, though it is implemented as the spread along the possible outcome categories (e.g., a small value of sigma means that one stimulus value will correspond to only a few possible outcome categories). Beta is a scaling parameter that is used to help estimate what the maximum BOLD response is and approaches 1 as the maximum BOLD response is better estimated.
 For each stimulus - outcome category pair, Q+ updates the log-likelihood for all possible combinations of parameters. Depending on the previous stimuli, Q+ will select the next stimulus by determining which result will most reduce the remaining entropy in the set of parameter combinations.
 
+\hypertarget{simulation-parameters}{%
+\subsubsection{Simulation parameters}\label{simulation-parameters}}
+
+In addition to the model parameters, which Q+ attempts to find, we also explore a range of simulation parameters. These include one parameter related to Q+ search, the number of outcome categories (7 or 15). Other parameters we explored relate to the structure of the simulation itself: simulated noise (the amount of white noise added to the simulated BOLD fMRI signal), the length of individual trials (8 or 12 seconds), the length of the TR (800 or 1600 ms).
+
+We did not vary several other parameters, including the stimulus domain (which stimulus values could be selected), the value for the maximum BOLD response, and the proportion of outcome categories reserved for the top and bottom (which we call headroom and set at 10\%). We also did not vary the model parameter domains (i.e., the values that each model parameter could take on). We arrived at these choices through trial and error, which is a compelling reason itself to use the Q+ fMRI simulation toolbox to set parameters for fMRI experiments. Some choices (like increasing the number of outcome categories, or the size of the parameter and stimulus domains) drastically increase the time to run Q+, limiting its utility in real-time fMRI experiments. Others, like the choice of headroom, yield strange or nonsensical results if they are set too low (0\%) or too high (50\%).
+
+\hypertarget{data-and-code-availability}{%
+\subsubsection{Data and code availability}\label{data-and-code-availability}}
+
+The data and code for the analyses described in the results is available in a git repository (\url{https://github.com/smweis/Weisberg_and_Aguirre_2020}). The QpfMRI toolbox is available for download and use (\url{https://github.com/smweis/qpfmri}).
+
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
-Our main approach is to compare simulated BOLD fMRI data timeseries that were generated using random stimulus selection with timeseries that were generated with Q+ optimization. We first step through one sample simulation, showing trial-by-trial results. We then describe simulations over a range of parameters (model parameters and control parameters including time to repetition, TR, and trial duration), comparing random stimulus selection with Q+ stimulus selection. The results demonstrate improved convergence on model parameters when Q+ controls stimulus selection. The results also suggest optimal parameters for real-time fMRI design using Q+ for TR and trial duration.
+Our main approach is to compare simulated BOLD fMRI data timeseries that were generated using random stimulus selection with timeseries that were generated with Q+ optimization. We first step through one sample simulation, showing trial-by-trial results. We then describe simulations over a range of parameters comparing random stimulus selection with Q+ stimulus selection. The results demonstrate improved convergence on model parameters when Q+ controls stimulus selection. The results also suggest optimal parameters for real-time fMRI design using Q+ for TR and trial duration.
+
+First, we describe one set of 100 6-minute simulated fMRI runs comparing Q+ with random stimulus selection for one set of model parameters and one set of simulation parameters. The first set of simulations illustrate the advantage of Q+ stimulus selection in the case of simulation parameters that optimize for realistic and desired fMRI conditions (fast TR, long trials, medium noise) and fast Q+ performance (few outcome categories).
+
+Next, we evaluate the range of performance for Q+ compared to random stimulus selection across a several control parameter choices.
+
+Finally, we explore performance within one set of control parameters across a range of model parameters.
+
+\hypertarget{first-set-of-simulations}{%
+\subsection{First set of simulations}\label{first-set-of-simulations}}
+
+\newpage
+
+\begin{figure}
+  
+  {\centering \includegraphics[width=500px]{../results/figs/fig1_7Outcomes_15Noise_12trialLength_800TR} 
+  
+  }
+  
+  \caption{The first set of simulations we evaluated are plotted. Each black line represents the veridical model (slope = .41, semi-saturation = .57) normalized to be between 0 and 1. Thin orange and blue lines represent each simulation's final parameters and the thick dotted line represents the mean of all 50 simulations. Although the average fit matched the veridical parameters for both Q+ (orange, right panel) and random (blue, left panel) stimulus selection, the resulting spread of parameter fits is visibly narrower for Q+.
+\newpage}\label{fig:results-figure-firstsims-1}
+  \end{figure}
+
+
+
+
+\newpage
+
+\begin{figure}
+  
+  {\centering \includegraphics[width=500px]{../results/figs/fig2_7Outcomes_15Noise_12trialLength_800TR} 
+  
+  }
+  
+  \caption{To evaluate how well the resulting parameters matched the veridical parameters we calculated the squared Pearson's correlation between the output for each simulation with the output for the veridical parameters. This histogram depicts the results of each correlation for all Q+ (orange) and random (blue) stimulus selection simulations.
+\newpage}\label{fig:results-figure-firstsims-2}
+  \end{figure}
+
+
+
+
+\begin{verbatim}
+<!-- RESULTS FIGURE 3-->
+\end{verbatim}
+
+\newpage
+
+\begin{figure}
+  
+  {\centering \includegraphics[width=500px]{../results/figs/fig3_7Outcomes_15Noise_12trialLength_800TR} 
+  
+  }
+  
+  \caption{(ref:results-figure-firstsims-3-caption)}\label{fig:results-figure-firstsims-3}
+  \end{figure}
+
+(ref:results-figure-firstsims-3-caption)
+\newpage
 
 \hypertarget{show-an-example-simulated-experiment-with-the-convergence-of-the-adaptive-procedure-upon-the-parameters-of-the-response-function}{%
 \subsection{Show an example simulated experiment with the convergence of the adaptive procedure upon the parameter(s) of the response function}\label{show-an-example-simulated-experiment-with-the-convergence-of-the-adaptive-procedure-upon-the-parameters-of-the-response-function}}
