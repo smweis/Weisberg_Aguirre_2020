@@ -14,8 +14,8 @@ affiliation:
 - id: '2'
   institution: University of Pennsylvania
 output:
-  papaja::apa6_word: default
   papaja::apa6_pdf: default
+  papaja::apa6_word: default
 bibliography: qpfmri.bib
 classoption: man
 documentclass: apa6
@@ -165,12 +165,60 @@ knitr::include_graphics("figures/Figure1.png")
   <!-- RESULTS FIGURE 3-->
 
 ## Varying control parameters
-TABLE of ANOVA results
+
+  Q+ improves model fit over random stimulus selection for one set of control parameters, but how does Q+ stimulus selection perform over a range of control parameters? We varied two properties of the experimental design: time to repetition (TR; 800 or 1600 ms) and how long each trial was (8 or 12 seconds). We also varied one property of the reverse model: the number of outcomes categories or bins (7 or 15). Finally, we explored three levels of noise in the response (.15, .45, .75 SDs). These levels could roughly correspond to low, medium, and high noise. (FIGURE XX). The purpose of these set of simulations was to see both how robust the Q+ stimulus selection advantage was and whether any experimental design choices may affect the accuracy of the results. 
+  
+  Table 1 presents the overall findings averaged over each set of 50 simulations. 
+```{r}
+Table1 <- read.table('..\\results\\tables\\Table1.csv',sep=',',header=TRUE)
+Table1  = Table1[c(5:14)]
+Table1 <- Table1[, c(8,7,9,10,2:5,6,1)]
+names(Table1)[names(Table1) == "pval"] <- "p-value"
+names(Table1)[names(Table1) == "Z"] <- "Z-score"
+names(Table1)[names(Table1) == "trialLength"] <- "Trial Length (s)"
+names(Table1)[names(Table1) == "fMRInoise"] <- "Noise"
+names(Table1)[names(Table1) == "nOutcomes"] <- "Bins"
+
+apa_table(
+  Table1
+  , caption = "Results by simulation parameter sets."
+  , note = "Non-parametric t-tests (Wilcoxon signed-rank) comparing each set of simulations for parameter values. TR = Time to repetition."
+  , escape = TRUE
+  , digits = 4
+  , align = 'c'
+  , landscape = TRUE
+  , col_spanners = list(`Parameters` = c(1, 4), `Results` = c(5, 10))
+)
+```
 
 
-## Show an example simulated experiment with the convergence of the adaptive procedure upon the parameter(s) of the response function
+  Table 2 presents the results of ANOVA comparing the three levels. 
+```{r}
+Table2 <- read.table('..\\results\\tables\\Table2.csv',sep=',',header=TRUE)
+Table2 <- Table2[, c(1,2,3,5,6,7)]
+names(Table2)[names(Table2) == "Source"] <- "Predictor"
+names(Table2)[names(Table2) == "d.f."] <- "df"
+names(Table2)[names(Table2) == "Prob.F"] <- "p"
+names(Table2)[names(Table2) == "Sum.Sq."] <- "Sum of Squares"
+Table2['Partial eta squared'] <- (Table2['Sum of Squares']) / (Table2['Sum of Squares'] + Table2[8,'Sum of Squares'])
+apa_table(
+  Table2
+  , caption = "Results by simulation parameter sets."
+  , note = "ANOVA"
+  , escape = FALSE
+  , digits = 4
+  , align = 'lccccc'
+)
+```
 
-## Explore choices for the trial duration and TR to find optimal experimental design for rapid and accurate parameter characterization. Examples: How finely to sample the stimulus space; scan length, number of trials, stimulus duration; Forcing occasional "baseline" trials to account for 1/f drift in the BOLD fMRI signal
+  <!-- RESULTS FIGURE 4-->
+  \newpage
+  ```{r results-figure-lownoise, out.width = "500px", fig.align = "center", fig.cap = "(ref:results-figure-lownoise-caption)" }
+  knitr::include_graphics("../results/figs/figLowSimulation.png")
+  ```
+  (ref:results-figure-lownoise-caption) Low noise test.
+  \newpage
+  <!-- RESULTS FIGURE 4-->
 
 ## Comparison of method of constant stimuli to Bayesian adaptive fMRI for time to achieve a given degree of confidence in an experimental parameter.
 
