@@ -162,12 +162,7 @@ fprintf('Q+ M = %0.4f, SD = %0.4f\nRandom M = %0.4f, SD = %0.4f\n',...,
     mean(qpRows.rSquared),std(qpRows.rSquared),...,
     mean(randRows.rSquared),std(randRows.rSquared));
 
-summaryStats.qpMean = mean(qpRows.rSquared);
-summaryStats.qpSD = std(qpRows.rSquared);
-summaryStats.randMean = mean(randRows.rSquared);
-summaryStats.randSD = std(randRows.rSquared);
-summaryStats.pval = pval;
-summaryStats.stats = stats;
+
 
 %% Figure 2: Histogram of r-squared results
 
