@@ -39,7 +39,7 @@ for i = 1:length(simulationValuesAll)
     close all;
 end
 toSaveTable = struct2table(toSave);
-toSaveTable = sortrows(toSaveTable,{'fMRInoise','nOutcomes','trialLength','TR'})
+toSaveTable = sortrows(toSaveTable,{'fMRInoise','nOutcomes','trialLength','TR'});
 writetable(toSaveTable,'results/tables/Table1.csv');
 
 load('C:\Users\stevenweisberg\Documents\MATLAB\projects\Weisberg_Aguirre_2020\results\Paper_Results\model_parameter_set1\loadedData.mat');
@@ -49,5 +49,5 @@ for i = 1:length(data.qpfmriResults)
 end
 
 [p,tbl,stats] = anovan(slope,{[data.qpfmriResults.TR],[data.qpfmriResults.fMRInoise],[data.qpfmriResults.trialLength]},'model','interaction','varnames',{'TR','fMRI Noise','Trial Length'});
-
+writecell(tbl,'results/tables/Table2.csv');
 results = multcompare(stats,'Dimension',[2 3]);
