@@ -1,0 +1,51 @@
+% Where is the raw data?
+resultsDir = 'C:\Users\stevenweisberg\Documents\MATLAB\projects\Weisberg_Aguirre_2020\results\Paper_Results\model_parameter_set1';
+
+% Stem name for the figure
+figName = 'test';
+% Do you want to save figures?
+savefig = false;
+
+% What parameters were varied?
+simulationParameters = {'nOutcomes','fMRInoise','trialLength','TR'};
+
+% Initialize cell then grab all unique simulation parameteters from the
+% data.
+a = cell(0);
+for i = 1:length(simulationParameters)
+    a{i} = unique([data.qpfmriResults.(simulationParameters{i})]);
+end
+simulationValuesAll = allcomb(a{1},a{2},a{3},a{4});
+
+% Initialize stats table and struct
+stats = cell(length(simulationValuesAll),1);
+toSave = struct;
+
+% For each value of simulation parameters, plot the results and save the
+% various outputs. 
+for i = 1:length(simulationValuesAll)
+    simulationValues = {simulationValuesAll(i,1),simulationValuesAll(i,2),simulationValuesAll(i,3),simulationValuesAll(i,4)};
+    stats{i} = plotSimulationResults(resultsDir,simulationParameters,simulationValues,figName,savefig);
+    toSave(i).nOutcomes = simulationValuesAll(i,1);
+    toSave(i).fMRInoise = simulationValuesAll(i,2);
+    toSave(i).trialLength = simulationValuesAll(i,3);
+    toSave(i).TR = simulationValuesAll(i,4);
+    toSave(i).pval = stats{i}.pval;
+    toSave(i).qpMean = stats{i}.qpMean;
+    toSave(i).qpSD = stats{i}.qpSD;
+    toSave(i).randMean = stats{i}.randMean;
+    toSave(i).randSD = stats{i}.randSD;
+    toSave(i).Z = stats{i}.stats.zval;
+    close all;
+end
+
+
+load('C:\Users\stevenweisberg\Documents\MATLAB\projects\Weisberg_Aguirre_2020\results\Paper_Results\model_parameter_set1\loadedData.mat');
+for i = 1:length(data.qpfmriResults)
+    slope(i) = data.qpfmriResults(i).psiParamsBadsFinal(1);
+    semisat(i) = data.qpfmriResults(i).psiParamsBadsFinal(2);
+end
+
+[p,tbl,stats] = anovan(slope,{[data.qpfmriResults.TR],[data.qpfmriResults.fMRInoise],[data.qpfmriResults.trialLength]},'model','interaction','varnames',{'TR','fMRI Noise','Trial Length'});
+
+results = multcompare(stats,'Dimension',[2 3]);

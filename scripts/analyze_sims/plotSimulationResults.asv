@@ -7,16 +7,16 @@ function summaryStats = plotSimulationResults(resultsDir,simulationParameters,si
 
 %
 % Description:
-%
+%     
 %
 %
 % Required inputs:
 %   resultsDir            - String - the absolute path to directory housing the
 %                           results.(e.g.,'C:\Users\stevenweisberg\Documents\MATLAB\projects\Weisberg_Aguirre_2020\results\Paper_Results\model_parameter_set1'
 %   simulationParameters  - Cell array - list of names of parameters you
-%                           want to filter the simulations on.
-%   simulationValues      - Vector - Values you want to filter based on.
-%%
+%                           want to filter the simulations on. 
+%   simulationValues      - Vector - Values you want to filter based on. 
+%% 
 % Example
 %{
 
@@ -71,7 +71,7 @@ predictedRelativeResponse = myQpfmriParams.model(myQpfmriParams.stimulusDomain{:
 
 
 
-%% Figure 1: Model fits
+%% Figure 1: Model fits 
 % Figure setup
 figure('Position', get(0, 'Screensize'));
 fig1 = gcf;
@@ -162,12 +162,7 @@ fprintf('Q+ M = %0.4f, SD = %0.4f\nRandom M = %0.4f, SD = %0.4f\n',...,
     mean(qpRows.rSquared),std(qpRows.rSquared),...,
     mean(randRows.rSquared),std(randRows.rSquared));
 
-summaryStats.qpMean = mean(qpRows.rSquared);
-summaryStats.qpSD = std(qpRows.rSquared);
-summaryStats.randMean = mean(randRows.rSquared);
-summaryStats.randSD = std(randRows.rSquared);
-summaryStats.pval = pval;
-summaryStats.stats = stats;
+
 
 %% Figure 2: Histogram of r-squared results
 
