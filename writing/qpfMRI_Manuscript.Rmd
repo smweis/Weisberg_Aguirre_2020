@@ -220,6 +220,28 @@ apa_table(
   \newpage
   <!-- RESULTS FIGURE 4-->
 
+
+
+  <!-- RESULTS FIGURE 5-->
+  \newpage
+  ```{r results-figure-mednoise, out.width = "500px", fig.align = "center", fig.cap = "(ref:results-figure-mednoise-caption)" }
+  knitr::include_graphics("../results/figs/figMedSimulation.png")
+  ```
+  (ref:results-figure-mednoise-caption) Medium noise test.
+  \newpage
+  <!-- RESULTS FIGURE 5-->
+
+
+
+  <!-- RESULTS FIGURE 6-->
+  \newpage
+  ```{r results-figure-highnoise, out.width = "500px", fig.align = "center", fig.cap = "(ref:results-figure-highnoise-caption)" }
+  knitr::include_graphics("../results/figs/figHighSimulation.png")
+  ```
+  (ref:results-figure-highnoise-caption) High noise test.
+  \newpage
+  <!-- RESULTS FIGURE 6-->
+
 ## Comparison of method of constant stimuli to Bayesian adaptive fMRI for time to achieve a given degree of confidence in an experimental parameter.
 
 # Discussion
