@@ -3,6 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
+  english,
   man,floatsintext]{apa6}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -37,12 +38,13 @@
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
   pdftitle={QpFMRI: Bayesian adaptive stimulus presentation for real-time fMRI},
-  pdfauthor={Steven M. Weisberg~\& Geoffrey K. Aguirre},
+  pdfauthor={Steven M. Weisberg1 \& Geoffrey K. Aguirre2},
+  pdflang={en-EN},
   pdfkeywords={adaptive stimulation, fMRI, Quest+, real-time fMRI, vision neuroscience},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
-\usepackage{graphicx}
+\usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -59,62 +61,95 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-\shorttitle{Bayesian adaptive fMRI}
-\affiliation{
-\vspace{0.5cm}
-\textsuperscript{1} University of Florida\\\textsuperscript{2} University of Pennsylvania}
-\keywords{adaptive stimulation, fMRI, Quest+, real-time fMRI, vision neuroscience\newline\indent Word count: X}
-\usepackage{csquotes}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+% Manuscript styling
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
 
+% Table formatting
 \usepackage{longtable}
 \usepackage{lscape}
-\usepackage{multirow}
-\usepackage{tabularx}
-\usepackage[flushleft]{threeparttable}
-\usepackage{threeparttablex}
+% \usepackage[counterclockwise]{rotating}   % Landscape page setup for large tables
+\usepackage{multirow}		% Table styling
+\usepackage{tabularx}		% Control Column width
+\usepackage[flushleft]{threeparttable}	% Allows for three part tables with a specified notes section
+\usepackage{threeparttablex}            % Lets threeparttable work with longtable
 
+% Create new environments so endfloat can handle them
+% \newenvironment{ltable}
+%   {\begin{landscape}\begin{center}\begin{threeparttable}}
+%   {\end{threeparttable}\end{center}\end{landscape}}
 \newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
 
+% Enables adjusting longtable caption width to table width
+% Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
 \makeatletter
 \newcommand\LastLTentrywidth{1em}
 \newlength\longtablewidth
 \setlength{\longtablewidth}{1in}
 \newcommand{\getlongtablewidth}{\begingroup \ifcsname LT@\roman{LT@tables}\endcsname \global\longtablewidth=0pt \renewcommand{\LT@entry}[2]{\global\advance\longtablewidth by ##2\relax\gdef\LastLTentrywidth{##2}}\@nameuse{LT@\roman{LT@tables}} \fi \endgroup}
 
+% \setlength{\parindent}{0.5in}
+% \setlength{\parskip}{0pt plus 0pt minus 0pt}
 
+% \usepackage{etoolbox}
+\makeatletter
+\patchcmd{\HyOrg@maketitle}
+  {\section{\normalfont\normalsize\abstractname}}
+  {\section*{\normalfont\normalsize\abstractname}}
+  {}{\typeout{Failed to patch abstract.}}
+\patchcmd{\HyOrg@maketitle}
+  {\section{\protect\normalfont{\@title}}}
+  {\section*{\protect\normalfont{\@title}}}
+  {}{\typeout{Failed to patch title.}}
+\makeatother
+\shorttitle{Bayesian adaptive fMRI}
+\keywords{adaptive stimulation, fMRI, Quest+, real-time fMRI, vision neuroscience\newline\indent Word count: X}
 \usepackage{lineno}
 
 \linenumbers
+\usepackage{csquotes}
 \usepackage{setspace}
 \captionsetup[figure]{font={stretch=1,scriptsize}}
 \usepackage{amsmath}
-\ifluatex
-  \usepackage{selnolig}  % disable illegal ligatures
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[]{english}
+\else
+  \usepackage[shorthands=off,main=english]{babel}
 \fi
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newenvironment{cslreferences}%
-  {\setlength{\parindent}{0pt}%
-  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
-  {\par}
 
 \title{QpFMRI: Bayesian adaptive stimulus presentation for real-time fMRI}
-\author{Steven M. Weisberg\textsuperscript{1}~\& Geoffrey K. Aguirre\textsuperscript{2}}
+\author{Steven M. Weisberg\textsuperscript{1} \& Geoffrey K. Aguirre\textsuperscript{2}}
 \date{}
 
-\authornote{Steven M. Weisberg, University of Florida, Department of Psychology
+
+\authornote{
+
+Steven M. Weisberg, University of Florida, Department of Psychology
 Geoffrey K. Aguirre, University of Pennsylvania, Department of Neurology, Center for Cognitive Neuroscience.
 Pre-print submitted for peer review.
 
-Correspondence concerning this article should be addressed to Steven M. Weisberg, 945 Center Dr., Gainesville, FL 32611. E-mail: \href{mailto:stevenweisberg@ufl.edu}{\nolinkurl{stevenweisberg@ufl.edu}}}
+Correspondence concerning this article should be addressed to Steven M. Weisberg, 945 Center Dr., Gainesville, FL 32611. E-mail: \href{mailto:stevenweisberg@ufl.edu}{\nolinkurl{stevenweisberg@ufl.edu}}
+
+}
+
+\affiliation{\vspace{0.5cm}\textsuperscript{1} University of Florida\\\textsuperscript{2} University of Pennsylvania}
 
 \abstract{
 QUEST+ (Q+, Watson, 2017) is an adaptive stimulus selection approach that works to minimize uncertainty in a parameterized model of the responses. Unlike random stimulus selection, Q+ stimulus selection dynamically select the next stimulus based upon the prior responses of the subject, and an underlying stimulus-response model. While this approach has been successful in behavioral experiments, to use Q+ in BOLD fMRI experiments, experimenters require a `real-time' measure of the BOLD response to stimuli as they are presented and solutions that address idiosyncracies of the BOLD signal. We have created a software toolbox that 1) extracts (or simulates) the BOLD fMRI signal from a brain region as imaging volumes are acquired, 2) cleans and fits the growing time-series to estimate the response on each trial, and 3) applies Q+ to the responsees to select the next stimulus. In simulations that model empirical data for a simple visual contrast experiment featuring stimuli of varying visual contrast values, we found that Q+ stimulus selection recovers model parameters more accurately than random stimulus selection. We report the results of stimulus selection approaches on simulated data, as well as how to optimize experimental parameters (e.g., TR, trial length) to improve model fit. In addition, we describe our solutions to the technical challenges posed by adapting Q+ for fMRI data, describe the codebase we have written to implement the solution, and present sample uses for Q+ stimulus selection in future real-time BOLD fMRI experiments.
-
-
 }
+
+
 
 \begin{document}
 \maketitle
@@ -151,12 +186,12 @@ Q+ (David H. Brainard, 2017; Watson, 2017) is a multidimensional Bayesian method
 \hypertarget{challenge-1-the-bold-signal-is-continuous}{%
 \subsubsection{Challenge 1: The BOLD signal is continuous}\label{challenge-1-the-bold-signal-is-continuous}}
 
-Q+ operates over discrete categorical outcomes, such as selecting amongst a set of color names for a stimulus. For stimuli in the middle of the red spectrum, roughly 100\% of responses will be ``red.'' But as the color patch drifts closer to yellow, this percentage will decrease. But the `outcomes' for the BOLD fMRI signal are continuous. There is no principled way to divide the BOLD signal up into categories, and arbitrarily small categories will increase computation time dramatically. To solve this, we define a fixed number of outcome categories onto which we map the amplitude of the BOLD response.
+Q+ operates over discrete categorical outcomes, such as selecting amongst a set of color names for a stimulus. For stimuli in the middle of the red spectrum, roughly 100\% of responses will be \enquote{red.} But as the color patch drifts closer to yellow, this percentage will decrease. But the \enquote{outcomes} for the BOLD fMRI signal are continuous. There is no principled way to divide the BOLD signal up into categories, and arbitrarily small categories will increase computation time dramatically. To solve this, we define a fixed number of outcome categories onto which we map the amplitude of the BOLD response.
 
 \hypertarget{challenge-2-the-bold-signal-is-noisy-and-outcomes-are-sparse}{%
 \subsubsection{Challenge 2: The BOLD signal is noisy and outcomes are sparse}\label{challenge-2-the-bold-signal-is-noisy-and-outcomes-are-sparse}}
 
-Q+ esimtates parameters of a function that predict the proportion of trial outcomes that fall in each category. For example, from wavelength (the stimulus dimension) Q+ will generate a prediction for the percentage of trials that will be described as red, green, blue, or yellow. Although there is uncertainty in the response over trials (i.e., presented with the same wavelength patch, participants will sometimes call the color red and other times call the color green), each individual response is assumed to be certain. That is, we do not assume that a participant who has said `green' means to say `red' 10\% of the time. The BOLD signal, on the other hand, is noisy. In response to a given stimulus, the BOLD signal will assume a range of values, normally distributed around the population mean (given some assumptions.) That is, the BOLD signal is a response that itself has uncertainty built in. In other words, physiologic noise in the BOLD fMRI response causes outcomes to be spread across categories around the veridical response value. Given unlimited amounts of data, this would not be a problem because the mean value of the BOLD response for a given stimulus would converge on the true value. But, unlike the color study, which could have 100s of trials, BOLD fMRI trials typically number in the 10s, thus responses are potentially sparse across the many outcome categories. To solve this, the outcome for each stimulus is determined by the parameters oof the neurometric function, plus a parameter we call \(\sigma\) (\emph{sigma}) that controls the width of a Gaussian that distributes outcomes across adjacent categories. Q+ estimates the value of \(\sigma\) as well.
+Q+ esimtates parameters of a function that predict the proportion of trial outcomes that fall in each category. For example, from wavelength (the stimulus dimension) Q+ will generate a prediction for the percentage of trials that will be described as red, green, blue, or yellow. Although there is uncertainty in the response over trials (i.e., presented with the same wavelength patch, participants will sometimes call the color red and other times call the color green), each individual response is assumed to be certain. That is, we do not assume that a participant who has said \enquote{green} means to say \enquote{red} 10\% of the time. The BOLD signal, on the other hand, is noisy. In response to a given stimulus, the BOLD signal will assume a range of values, normally distributed around the population mean (given some assumptions.) That is, the BOLD signal is a response that itself has uncertainty built in. In other words, physiologic noise in the BOLD fMRI response causes outcomes to be spread across categories around the veridical response value. Given unlimited amounts of data, this would not be a problem because the mean value of the BOLD response for a given stimulus would converge on the true value. But, unlike the color study, which could have 100s of trials, BOLD fMRI trials typically number in the 10s, thus responses are potentially sparse across the many outcome categories. To solve this, the outcome for each stimulus is determined by the parameters oof the neurometric function, plus a parameter we call \(\sigma\) (\emph{sigma}) that controls the width of a Gaussian that distributes outcomes across adjacent categories. Q+ estimates the value of \(\sigma\) as well.
 
 \hypertarget{challenge-3-the-bold-fmri-signal-is-unitless.}{%
 \subsubsection{Challenge 3: The BOLD fMRI signal is unitless.}\label{challenge-3-the-bold-fmri-signal-is-unitless.}}
@@ -171,7 +206,7 @@ Similarly, the maximum possible response is not known \emph{a priori} and must b
 \hypertarget{challenge-5-bold-fmri-data-are-subject-to-low-frequency-temporal-noise}{%
 \subsubsection{Challenge 5: BOLD fMRI data are subject to low-frequency temporal noise}\label{challenge-5-bold-fmri-data-are-subject-to-low-frequency-temporal-noise}}
 
-Q+ accumulates evidence across trials. To obtain the amplitude of response on a new trial, the growing BOLD fMRI signal is subject to pre-processing, including the removal of low-frequency noise. This calculation alters the esimated response to prior trials. To solve this, we iteratively re-train Q+ with all past trials up through the current trial.
+Q+ accumulates evidence across trials. To obtain the amplitude of response on a new trial, the growing BOLD fMRI signal is subject to pre-processing, including the removal of low-frequency noise. This calculation alters the estimated response to prior trials. To solve this, we iteratively re-train Q+ with all past trials up through the current trial.
 
 \hypertarget{qpfmri-an-overview}{%
 \subsection{QPFMRI: An overview}\label{qpfmri-an-overview}}
@@ -230,14 +265,14 @@ The data and code for the analyses described in the results is available in a gi
 
 Our main approach is to compare simulated BOLD fMRI data timeseries that were generated using random stimulus selection with timeseries that were generated with Q+ optimization. We first step through one sample simulation, showing trial-by-trial results. We then describe simulations over a range of parameters comparing random stimulus selection with Q+ stimulus selection. The results demonstrate improved convergence on model parameters when Q+ controls stimulus selection. The results also suggest optimal parameters for real-time fMRI design using Q+ for TR and trial duration.
 
-First, we describe one set of 100 6-minute simulated fMRI runs comparing Q+ with random stimulus selection for one set of model parameters and one set of simulation parameters. The first set of simulations illustrate the advantage of Q+ stimulus selection in the case of simulation parameters that optimize for realistic and desired fMRI conditions (fast TR, long trials, medium noise) and fast Q+ performance (few outcome categories).
+First, we describe one set of 100 6-minute simulated fMRI runs comparing Q+ with random stimulus selection for one set of model parameters and one set of simulation parameters. The first set of simulations illustrate the advantage of Q+ stimulus selection in the case of simulation parameters that optimize for realistic and desired fMRI conditions (fast TR, long trials, medium noise) and fast Q+ performance (few outcome categories).Next, we evaluate the range of performance for Q+ compared to random stimulus selection across a several control parameter choices. Finally, we explore performance within one set of control parameters across a range of model parameters.
 
-Next, we evaluate the range of performance for Q+ compared to random stimulus selection across a several control parameter choices.
+For these next sets of simulations, we used the following control parameters: TR = 800ms; number of trials = 30; trial length = 12s. We set the estimated maximum BOLD to 1.5\% signal change and initialized the maximum BOLD value to 1\%. We enforced baseline and maximum BOLD trials to alternate for the first six trials and then mandated a baseline trial every subsequent 5th trial and a maximum BOLD trial every 10th trial. We chose the lowest level of noise (.05 SD).
 
-Finally, we explore performance within one set of control parameters across a range of model parameters.
+\hypertarget{simulating-one-set-of-model-parameters}{%
+\subsection{Simulating one set of model parameters}\label{simulating-one-set-of-model-parameters}}
 
-\hypertarget{first-set-of-simulations}{%
-\subsection{First set of simulations}\label{first-set-of-simulations}}
+To determine whether Q+ improves model fit over random stimulus selection, we selected model parameters and control parameters that we expected would behave well. We chose model parameters from the middle of the distribution (slope = .41, semi-saturation = .57), and which led to high differentiation among our stimulus domain. That is, variation in the range of possible stimulus values would lead to a unique model parameter solution, which would be discoverable by the Q+ algorithm. As stated above, we chose control parameters optimizing for desired fMRI conditions. The results of the simulations are summarized in Figure 2, Figure 3, and Figure 4. Qualitatively, Q+ stimulus selection led to a narrower distribution around the model parameters (Figure 2), with fewer outlying results. Q+ stimulus selection led to a higher overall fit as measured by R-squared (Figure 3). Over 50 simulations per type, the fit for Q+ stimulus selection was significantly higher, Wilcoxon signed-rank test Z(98) = 5.13, p \textless{} 0.0001 (Q+: \emph{M} = 0.9986, \emph{SD} = 0.0012; Random: \emph{M} = 0.9817, \emph{SD} = 0.0348).
 
 \newpage
 
@@ -269,10 +304,6 @@ Finally, we explore performance within one set of control parameters across a ra
 
 
 
-\begin{verbatim}
-<!-- RESULTS FIGURE 3-->
-\end{verbatim}
-
 \newpage
 
 \begin{figure}
@@ -281,17 +312,111 @@ Finally, we explore performance within one set of control parameters across a ra
   
   }
   
-  \caption{(ref:results-figure-firstsims-3-caption)}\label{fig:results-figure-firstsims-3}
+  \caption{Excluding the first 5 trials (which were chosen to be alternating baseline and maximum BOLD trials), we plot the mean (thick line) and standard error (shaded area) estimates for the maximum BOLD estimate (top panel), slope (middle panel) and semi-saturation (bottom panel) averaged over all simulations after each trial. All three parameters are estimated more quickly and with less error when Q+ stimulus selection is used (orange) compared to random stimulus selection (blue).
+\newpage}\label{fig:results-figure-firstsims-3}
   \end{figure}
 
-(ref:results-figure-firstsims-3-caption)
-\newpage
+
+
+
+\hypertarget{varying-control-parameters}{%
+\subsection{Varying control parameters}\label{varying-control-parameters}}
+
+Q+ improves model fit over random stimulus selection for one set of control parameters, but how does Q+ stimulus selection perform over a range of control parameters? We varied two properties of the experimental design: time to repetition (TR; 800 or 1600 ms) and how long each trial was (8 or 12 seconds). We also varied one property of the reverse model: the number of outcomes categories or bins (7 or 15). Finally, we explored three levels of noise in the response (.15, .45, .75 SDs). These levels could roughly correspond to low, medium, and high noise. (FIGURE XX). The purpose of these set of simulations was to see both how robust the Q+ stimulus selection advantage was and whether any experimental design choices may affect the accuracy of the results.
+
+Table 1 presents the overall findings averaged over each set of 50 simulations.
+
+\begin{lltable}
+
+\begin{TableNotes}[para]
+\normalsize{\textit{Note.} Non-parametric t-tests (Wilcoxon signed-rank) comparing each set of simulations for parameter values. TR = Time to repetition.}
+\end{TableNotes}
+
+\begin{longtable}{cccccccccc}\noalign{\getlongtablewidth\global\LTcapwidth=\longtablewidth}
+\caption{\label{tab:unnamed-chunk-1}Results by simulation parameter sets.}\\
+\toprule
+ \multicolumn{4}{c}{Parameters} & \multicolumn{6}{c}{Results} \\
+\cmidrule(r){1-4} \cmidrule(r){5-10}
+Noise & \multicolumn{1}{c}{Bins} & \multicolumn{1}{c}{Trial Length (s)} & \multicolumn{1}{c}{TR} & \multicolumn{1}{c}{qpMean} & \multicolumn{1}{c}{qpSD} & \multicolumn{1}{c}{randMean} & \multicolumn{1}{c}{randSD} & \multicolumn{1}{c}{Z-score} & \multicolumn{1}{c}{p-value}\\
+\midrule
+\endfirsthead
+\caption*{\normalfont{Table \ref{tab:unnamed-chunk-1} continued}}\\
+\toprule
+ \multicolumn{4}{c}{Parameters} & \multicolumn{6}{c}{Results} \\
+\cmidrule(r){1-4} \cmidrule(r){5-10}
+Noise & \multicolumn{1}{c}{Bins} & \multicolumn{1}{c}{Trial Length (s)} & \multicolumn{1}{c}{TR} & \multicolumn{1}{c}{qpMean} & \multicolumn{1}{c}{qpSD} & \multicolumn{1}{c}{randMean} & \multicolumn{1}{c}{randSD} & \multicolumn{1}{c}{Z-score} & \multicolumn{1}{c}{p-value}\\
+\midrule
+\endhead
+0.1500 & 7 & 8 & 800 & 0.9952 & 0.0192 & 0.9821 & 0.0498 & 4.8636 & 0.0000\\
+0.1500 & 7 & 8 & 1600 & 0.9979 & 0.0021 & 0.9849 & 0.0277 & 3.9191 & 0.0001\\
+0.1500 & 7 & 12 & 800 & 0.9986 & 0.0012 & 0.9817 & 0.0348 & 5.1256 & 0.0000\\
+0.1500 & 7 & 12 & 1600 & 0.9972 & 0.0030 & 0.9819 & 0.0451 & 1.6097 & 0.1075\\
+0.1500 & 15 & 8 & 800 & 0.9976 & 0.0023 & 0.9836 & 0.0363 & 4.4224 & 0.0000\\
+0.1500 & 15 & 8 & 1600 & 0.9978 & 0.0023 & 0.9825 & 0.0297 & 6.0631 & 0.0000\\
+0.1500 & 15 & 12 & 800 & 0.9971 & 0.0044 & 0.9801 & 0.0628 & 3.4159 & 0.0006\\
+0.1500 & 15 & 12 & 1600 & 0.9981 & 0.0020 & 0.9853 & 0.0273 & 5.1462 & 0.0000\\
+0.4500 & 7 & 8 & 800 & 0.9829 & 0.0258 & 0.9609 & 0.0787 & 2.4508 & 0.0143\\
+0.4500 & 7 & 8 & 1600 & 0.9728 & 0.0391 & 0.9471 & 0.0681 & 1.4718 & 0.1411\\
+0.4500 & 7 & 12 & 800 & 0.9767 & 0.0396 & 0.9587 & 0.0504 & 2.9471 & 0.0032\\
+0.4500 & 7 & 12 & 1600 & 0.9832 & 0.0297 & 0.9460 & 0.0623 & 4.1260 & 0.0000\\
+0.4500 & 15 & 8 & 800 & 0.9880 & 0.0163 & 0.9409 & 0.0700 & 4.9394 & 0.0000\\
+0.4500 & 15 & 8 & 1600 & 0.9770 & 0.0462 & 0.9290 & 0.0811 & 4.2018 & 0.0000\\
+0.4500 & 15 & 12 & 800 & 0.9886 & 0.0145 & 0.9445 & 0.0759 & 5.3668 & 0.0000\\
+0.4500 & 15 & 12 & 1600 & 0.9874 & 0.0096 & 0.9517 & 0.0578 & 3.1746 & 0.0015\\
+0.7500 & 7 & 8 & 800 & 0.9084 & 0.0794 & 0.8591 & 0.1446 & 1.5821 & 0.1136\\
+0.7500 & 7 & 8 & 1600 & 0.8479 & 0.2067 & 0.8214 & 0.1661 & 1.4925 & 0.1356\\
+0.7500 & 7 & 12 & 800 & 0.9143 & 0.1026 & 0.8851 & 0.0894 & 2.0578 & 0.0396\\
+0.7500 & 7 & 12 & 1600 & 0.8910 & 0.1960 & 0.8355 & 0.1850 & 3.0850 & 0.0020\\
+0.7500 & 15 & 8 & 800 & 0.8474 & 0.2254 & 0.8454 & 0.1540 & 1.5992 & 0.1098\\
+0.7500 & 15 & 8 & 1600 & 0.8421 & 0.1743 & 0.7961 & 0.1830 & 1.8303 & 0.0672\\
+0.7500 & 15 & 12 & 800 & 0.9044 & 0.1453 & 0.8698 & 0.1392 & 1.9199 & 0.0549\\
+0.7500 & 15 & 12 & 1600 & 0.9044 & 0.1596 & 0.8393 & 0.1784 & 2.7541 & 0.0059\\
+\bottomrule
+\addlinespace
+\insertTableNotes
+\end{longtable}
+
+\end{lltable}
+
+Table 2 presents the results of ANOVA comparing the three levels.
+
+\begin{table}[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:unnamed-chunk-2}Results by simulation parameter sets.}
+
+\begin{tabular}{lcccccc}
+\toprule
+Predictor & \multicolumn{1}{c}{Sum of Squares} & \multicolumn{1}{c}{df} & \multicolumn{1}{c}{Mean Sq.} & \multicolumn{1}{c}{F} & \multicolumn{1}{c}{p} & \multicolumn{1}{c}{Partial eta squared}\\
+\midrule
+TR & 0.0586 & 1 & 0.06 & 0.77 & 0.3805 & 0.0003\\
+fMRI Noise & 5.9027 & 2 & 2.95 & 38.74 & 0.0000 & 0.0303\\
+Trial Length & 0.1732 & 1 & 0.17 & 2.27 & 0.1317 & 0.0009\\
+TR*fMRI Noise & 0.1723 & 2 & 0.09 & 1.13 & 0.3229 & 0.0009\\
+TR*Trial Length & 0.5499 & 1 & 0.55 & 7.22 & 0.0073 & 0.0029\\
+fMRI Noise*Trial Length & 0.0856 & 2 & 0.04 & 0.56 & 0.5704 & 0.0005\\
+Error & 182.0005 & 2389 & 0.08 & NA & NA & NA\\
+Total & 188.9453 & 2398 & NA & NA & NA & NA\\
+\bottomrule
+\addlinespace
+\end{tabular}
+
+\begin{tablenotes}[para]
+\normalsize{\textit{Note.} ANOVA}
+\end{tablenotes}
+
+\end{threeparttable}
+\end{center}
+
+\end{table}
 
 \hypertarget{show-an-example-simulated-experiment-with-the-convergence-of-the-adaptive-procedure-upon-the-parameters-of-the-response-function}{%
 \subsection{Show an example simulated experiment with the convergence of the adaptive procedure upon the parameter(s) of the response function}\label{show-an-example-simulated-experiment-with-the-convergence-of-the-adaptive-procedure-upon-the-parameters-of-the-response-function}}
 
 \hypertarget{explore-choices-for-the-trial-duration-and-tr-to-find-optimal-experimental-design-for-rapid-and-accurate-parameter-characterization.-examples-how-finely-to-sample-the-stimulus-space-scan-length-number-of-trials-stimulus-duration-forcing-occasional-baseline-trials-to-account-for-1f-drift-in-the-bold-fmri-signal}{%
-\subsection{Explore choices for the trial duration and TR to find optimal experimental design for rapid and accurate parameter characterization. Examples: How finely to sample the stimulus space; scan length, number of trials, stimulus duration; Forcing occasional ``baseline'' trials to account for 1/f drift in the BOLD fMRI signal}\label{explore-choices-for-the-trial-duration-and-tr-to-find-optimal-experimental-design-for-rapid-and-accurate-parameter-characterization.-examples-how-finely-to-sample-the-stimulus-space-scan-length-number-of-trials-stimulus-duration-forcing-occasional-baseline-trials-to-account-for-1f-drift-in-the-bold-fmri-signal}}
+\subsection{\texorpdfstring{Explore choices for the trial duration and TR to find optimal experimental design for rapid and accurate parameter characterization. Examples: How finely to sample the stimulus space; scan length, number of trials, stimulus duration; Forcing occasional \enquote{baseline} trials to account for 1/f drift in the BOLD fMRI signal}{Explore choices for the trial duration and TR to find optimal experimental design for rapid and accurate parameter characterization. Examples: How finely to sample the stimulus space; scan length, number of trials, stimulus duration; Forcing occasional ``baseline'' trials to account for 1/f drift in the BOLD fMRI signal}}\label{explore-choices-for-the-trial-duration-and-tr-to-find-optimal-experimental-design-for-rapid-and-accurate-parameter-characterization.-examples-how-finely-to-sample-the-stimulus-space-scan-length-number-of-trials-stimulus-duration-forcing-occasional-baseline-trials-to-account-for-1f-drift-in-the-bold-fmri-signal}}
 
 \hypertarget{comparison-of-method-of-constant-stimuli-to-bayesian-adaptive-fmri-for-time-to-achieve-a-given-degree-of-confidence-in-an-experimental-parameter.}{%
 \subsection{Comparison of method of constant stimuli to Bayesian adaptive fMRI for time to achieve a given degree of confidence in an experimental parameter.}\label{comparison-of-method-of-constant-stimuli-to-bayesian-adaptive-fmri-for-time-to-achieve-a-given-degree-of-confidence-in-an-experimental-parameter.}}
@@ -333,26 +458,16 @@ Finally, we explore performance within one set of control parameters across a ra
 \setlength{\leftskip}{0.5in}
 
 \hypertarget{refs}{}
-\begin{cslreferences}
 \leavevmode\hypertarget{ref-davidh.brainardMQUESTPlusMatlabImplementation2017}{}%
 David H. Brainard. (2017). mQUESTPlus: A Matlab implementation of QUEST+.
 
 \leavevmode\hypertarget{ref-watsonQUESTGeneralMultidimensional2017}{}%
-Watson, A. B. (2017). QUEST+: A general multidimensional Bayesian adaptive psychometric method. \emph{Journal of Vision}, \emph{17}(3), 10--10. doi:\href{https://doi.org/10.1167/17.3.10}{10.1167/17.3.10}
+Watson, A. B. (2017). QUEST+: A general multidimensional Bayesian adaptive psychometric method. \emph{Journal of Vision}, \emph{17}(3), 10--10. \url{https://doi.org/10.1167/17.3.10}
 
 \leavevmode\hypertarget{ref-watsonQuestBayesianAdaptive1983}{}%
-Watson, A. B., \& Pelli, D. G. (1983). Quest: A Bayesian adaptive psychometric method. \emph{Perception \& Psychophysics}, \emph{33}(2), 113--120. doi:\href{https://doi.org/10.3758/BF03202828}{10.3758/BF03202828}
-
-\leavevmode\hypertarget{ref-davidh.brainardMQUESTPlusMatlabImplementation2017}{}%
-David H. Brainard. (2017). mQUESTPlus: A Matlab implementation of QUEST+.
-
-\leavevmode\hypertarget{ref-watsonQUESTGeneralMultidimensional2017}{}%
-Watson, A. B. (2017). QUEST+: A general multidimensional Bayesian adaptive psychometric method. \emph{Journal of Vision}, \emph{17}(3), 10--10. doi:\href{https://doi.org/10.1167/17.3.10}{10.1167/17.3.10}
-
-\leavevmode\hypertarget{ref-watsonQuestBayesianAdaptive1983}{}%
-Watson, A. B., \& Pelli, D. G. (1983). Quest: A Bayesian adaptive psychometric method. \emph{Perception \& Psychophysics}, \emph{33}(2), 113--120. doi:\href{https://doi.org/10.3758/BF03202828}{10.3758/BF03202828}
-\end{cslreferences}
+Watson, A. B., \& Pelli, D. G. (1983). Quest: A Bayesian adaptive psychometric method. \emph{Perception \& Psychophysics}, \emph{33}(2), 113--120. \url{https://doi.org/10.3758/BF03202828}
 
 \endgroup
+
 
 \end{document}
