@@ -7,16 +7,16 @@ function plotSimulationResults(resultsDir,simulationParameters,simulationValues,
 
 %
 % Description:
-%     
+%
 %
 %
 % Required inputs:
 %   resultsDir            - String - the absolute path to directory housing the
 %                           results.(e.g.,'C:\Users\stevenweisberg\Documents\MATLAB\projects\Weisberg_Aguirre_2020\results\Paper_Results\model_parameter_set1'
 %   simulationParameters  - Cell array - list of names of parameters you
-%                           want to filter the simulations on. 
-%   simulationValues      - Vector - Values you want to filter based on. 
-%% 
+%                           want to filter the simulations on.
+%   simulationValues      - Vector - Values you want to filter based on.
+%%
 % Example
 %{
 
@@ -71,7 +71,7 @@ predictedRelativeResponse = myQpfmriParams.model(myQpfmriParams.stimulusDomain{:
 
 
 
-%% Figure 1: Model fits 
+%% Figure 1: Model fits
 % Figure setup
 figure('Position', get(0, 'Screensize'));
 fig1 = gcf;

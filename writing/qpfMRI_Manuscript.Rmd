@@ -129,13 +129,13 @@ knitr::include_graphics("figures/Figure1.png")
 # Results
   Our main approach is to compare simulated BOLD fMRI data timeseries that were generated using random stimulus selection with timeseries that were generated with Q+ optimization. We first step through one sample simulation, showing trial-by-trial results. We then describe simulations over a range of parameters comparing random stimulus selection with Q+ stimulus selection. The results demonstrate improved convergence on model parameters when Q+ controls stimulus selection. The results also suggest optimal parameters for real-time fMRI design using Q+ for TR and trial duration.
 
-  First, we describe one set of 100 6-minute simulated fMRI runs comparing Q+ with random stimulus selection for one set of model parameters and one set of simulation parameters. The first set of simulations illustrate the advantage of Q+ stimulus selection in the case of simulation parameters that optimize for realistic and desired fMRI conditions (fast TR, long trials, medium noise) and fast Q+ performance (few outcome categories).
+  First, we describe one set of 100 6-minute simulated fMRI runs comparing Q+ with random stimulus selection for one set of model parameters and one set of simulation parameters. The first set of simulations illustrate the advantage of Q+ stimulus selection in the case of simulation parameters that optimize for realistic and desired fMRI conditions (fast TR, long trials, medium noise) and fast Q+ performance (few outcome categories).Next, we evaluate the range of performance for Q+ compared to random stimulus selection across a several control parameter choices. Finally, we explore performance within one set of control parameters across a range of model parameters.
 
-  Next, we evaluate the range of performance for Q+ compared to random stimulus selection across a several control parameter choices.
+  For these next sets of simulations, we used the following control parameters: TR = 800ms; number of trials = 30; trial length = 12s. We set the estimated maximum BOLD to 1.5% signal change and initialized the maximum BOLD value to 1%. We enforced baseline and maximum BOLD trials to alternate for the first six trials and then mandated a baseline trial every subsequent 5th trial and a maximum BOLD trial every 10th trial. We chose the lowest level of noise (.05 SD).
 
-  Finally, we explore performance within one set of control parameters across a range of model parameters.
+## Simulating one set of model parameters
 
-## First set of simulations
+  To determine whether Q+ improves model fit over random stimulus selection, we selected model parameters and control parameters that we expected would behave well. We chose model parameters from the middle of the distribution (slope = .41, semi-saturation = .57), and which led to high differentiation among our stimulus domain. That is, variation in the range of possible stimulus values would lead to a unique model parameter solution, which would be discoverable by the Q+ algorithm. As stated above, we chose control parameters optimizing for desired fMRI conditions. The results of the simulations are summarized in Figure 2, Figure 3, and Figure 4. Qualitatively, Q+ stimulus selection led to a narrower distribution around the model parameters (Figure 2), with fewer outlying results. Q+ stimulus selection led to a higher overall fit as measured by R-squared (Figure 3). Over 50 simulations per type, the fit for Q+ stimulus selection was significantly higher, Wilcoxon signed-rank test Z(98) = 5.13, p < 0.0001 (Q+: *M* = 0.9986, *SD* = 0.0012; Random: *M* = 0.9817, *SD* = 0.0348).
 
   <!-- RESULTS FIGURE 1-->
   \newpage
@@ -160,9 +160,13 @@ knitr::include_graphics("figures/Figure1.png")
   ```{r results-figure-firstsims-3, out.width = "500px", fig.align = "center", fig.cap = "(ref:results-figure-firstsims-3-caption)" }
   knitr::include_graphics("../results/figs/fig3_7Outcomes_15Noise_12trialLength_800TR.png")
   ```
-  (ref:results-figure-firstsims-3-caption) FILLER FOR NOW
+  (ref:results-figure-firstsims-3-caption) Excluding the first 5 trials (which were chosen to be alternating baseline and maximum BOLD trials), we plot the mean (thick line) and standard error (shaded area) estimates for the maximum BOLD estimate (top panel), slope (middle panel) and semi-saturation (bottom panel) averaged over all simulations after each trial. All three parameters are estimated more quickly and with less error when Q+ stimulus selection is used (orange) compared to random stimulus selection (blue).
   \newpage
   <!-- RESULTS FIGURE 3-->
+
+## Varying control parameters
+TABLE of ANOVA results
+
 
 ## Show an example simulated experiment with the convergence of the adaptive procedure upon the parameter(s) of the response function
 
