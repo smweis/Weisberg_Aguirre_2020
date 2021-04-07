@@ -825,3 +825,102 @@ Q+ parameters
 slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.114 
 maxBOLD estimate = 1.608
 
+
+Trial 90: baseline Stimulus Selection
+Stimulus: 0.010
+Output value 0.146
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.608
+
+
+Trial 91: qplus Stimulus Selection
+Stimulus: 0.629
+Output value 1.608
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.608
+
+
+Trial 92: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.292
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.608
+
+
+Trial 93: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.731
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.608
+
+
+Trial 94: qplus Stimulus Selection
+Stimulus: 0.629
+Output value 1.608
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.608
+
+
+Trial 95: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.754
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.608
+
+
+Trial 96: qplus Stimulus Selection
+Stimulus: 0.629
+Output value 1.023
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.608
+
+
+Trial 97: qplus Stimulus Selection
+Stimulus: 0.629
+Output value 1.315
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.608
+
+
+Trial 98: qplus Stimulus Selection
+Stimulus: 0.629
+Output value 1.169
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.608
+
+
+Trial 99: qplus Stimulus Selection
+Stimulus: 0.629
+Output value 1.315
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.608
+
+
+Trial 100: baseline Stimulus Selection
+Stimulus: 0.010
+Output value -0.146
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.608
+

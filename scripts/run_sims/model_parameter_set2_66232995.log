@@ -929,3 +929,5 @@ FINAL VALUES
 --------------------------------------------------------------
 Simulated parameters:              slope: 0.200 semiSat: 0.570 beta: 1.000 sigma: 0.100 
 Max posterior QUEST+ parameters:   slope: 0.234 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+Max BADS parameters:               slope: 0.232 semiSat: 0.561 beta: 1.000 sigma: 0.111 
+maxBOLD estimate: 1.638

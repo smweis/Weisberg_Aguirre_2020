@@ -861,3 +861,73 @@ Q+ parameters
 slope: 0.144 semiSat: 0.560 beta: 1.000 sigma: 0.166 
 maxBOLD estimate = 1.561
 
+
+Trial 94: random Stimulus Selection
+Stimulus: 0.423
+Output value -0.142
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 1.000 sigma: 0.166 
+maxBOLD estimate = 1.561
+
+
+Trial 95: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.136
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 1.000 sigma: 0.166 
+maxBOLD estimate = 1.561
+
+
+Trial 96: random Stimulus Selection
+Stimulus: 0.134
+Output value 0.142
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 1.000 sigma: 0.166 
+maxBOLD estimate = 1.561
+
+
+Trial 97: random Stimulus Selection
+Stimulus: 0.505
+Output value 0.142
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 1.000 sigma: 0.166 
+maxBOLD estimate = 1.561
+
+
+Trial 98: random Stimulus Selection
+Stimulus: 0.546
+Output value 0.852
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 1.000 sigma: 0.166 
+maxBOLD estimate = 1.561
+
+
+Trial 99: random Stimulus Selection
+Stimulus: 0.257
+Output value -0.284
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 1.000 sigma: 0.166 
+maxBOLD estimate = 1.561
+
+
+Trial 100: baseline Stimulus Selection
+Stimulus: 0.010
+Output value 0.142
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 1.000 sigma: 0.166 
+maxBOLD estimate = 1.561
+
+--------------------------------------------------------------
+FINAL VALUES
+--------------------------------------------------------------
+Simulated parameters:              slope: 0.200 semiSat: 0.570 beta: 1.000 sigma: 0.150 
+Max posterior QUEST+ parameters:   slope: 0.144 semiSat: 0.560 beta: 1.000 sigma: 0.166 
+Max BADS parameters:               slope: 0.150 semiSat: 0.584 beta: 1.000 sigma: 0.138 
+maxBOLD estimate: 1.565

@@ -807,3 +807,102 @@ Q+ parameters
 slope: 0.144 semiSat: 0.560 beta: 1.125 sigma: 0.114 
 maxBOLD estimate = 1.425
 
+
+Trial 88: random Stimulus Selection
+Stimulus: 1.000
+Output value 1.703
+
+Q+ parameters
+slope: 0.089 semiSat: 0.560 beta: 1.062 sigma: 0.114 
+maxBOLD estimate = 1.603
+
+
+Trial 89: random Stimulus Selection
+Stimulus: 0.134
+Output value -0.135
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.875 sigma: 0.114 
+maxBOLD estimate = 1.703
+
+
+Trial 90: baseline Stimulus Selection
+Stimulus: 0.010
+Output value -0.144
+
+Q+ parameters
+slope: 0.113 semiSat: 0.560 beta: 1.062 sigma: 0.114 
+maxBOLD estimate = 1.490
+
+
+Trial 91: random Stimulus Selection
+Stimulus: 0.546
+Output value 0.612
+
+Q+ parameters
+slope: 0.089 semiSat: 0.560 beta: 1.062 sigma: 0.114 
+maxBOLD estimate = 1.583
+
+
+Trial 92: random Stimulus Selection
+Stimulus: 0.794
+Output value 1.472
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.875 sigma: 0.114 
+maxBOLD estimate = 1.682
+
+
+Trial 93: random Stimulus Selection
+Stimulus: 1.000
+Output value 1.807
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 1.125 sigma: 0.114 
+maxBOLD estimate = 1.472
+
+
+Trial 94: random Stimulus Selection
+Stimulus: 0.959
+Output value 1.553
+
+Q+ parameters
+slope: 0.089 semiSat: 0.560 beta: 1.031 sigma: 0.114 
+maxBOLD estimate = 1.656
+
+
+Trial 95: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.494
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.875 sigma: 0.114 
+maxBOLD estimate = 1.708
+
+
+Trial 96: random Stimulus Selection
+Stimulus: 1.000
+Output value 1.588
+
+Q+ parameters
+slope: 0.113 semiSat: 0.560 beta: 1.062 sigma: 0.114 
+maxBOLD estimate = 1.494
+
+
+Trial 97: random Stimulus Selection
+Stimulus: 0.010
+Output value 0.000
+
+Q+ parameters
+slope: 0.089 semiSat: 0.560 beta: 1.062 sigma: 0.114 
+maxBOLD estimate = 1.588
+
+
+Trial 98: random Stimulus Selection
+Stimulus: 0.711
+Output value 1.208
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.875 sigma: 0.114 
+maxBOLD estimate = 1.687
+

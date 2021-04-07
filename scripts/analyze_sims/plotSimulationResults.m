@@ -203,12 +203,15 @@ fig3 = gcf;
 set(fig3,'color','w');
 subplot(3,1,1);
 
+errorPlot = {@mean @(x) std(x)};
+%errorPlot = {@mean,@(x) std(x)/sqrt(length(x))};
+
 % Plot maxBOLD fit over trials
 shadedErrorBar(7:dataTable.nTrials(1),abs(qpRows.maxBOLDoverTrials(:,7:end) - qpRows.maxBOLDSimulated(1))/qpRows.maxBOLDSimulated(1),...,
-    {@mean,@(x) std(x)/sqrt(length(x))},'lineprops',{'color',colors.darkQPColor});
+    errorPlot,'lineprops',{'color',colors.darkQPColor});
 hold on;
 shadedErrorBar(7:dataTable.nTrials,abs(randRows.maxBOLDoverTrials(:,7:end) - randRows.maxBOLDSimulated(1))/randRows.maxBOLDSimulated(1),...,
-    {@mean,@(x) std(x)/sqrt(length(x))},'lineprops',{'color',colors.darkRandColor});
+    errorPlot,'lineprops',{'color',colors.darkRandColor});
 legend('QP','Random');
 ylabel('Max BOLD estimate (% signal change)');
 title(sprintf('MaxBOLD fits over trials'));
@@ -234,9 +237,9 @@ end
 
 % Lineplot of change over time for Slope
 subplot(3,1,2);
-shadedErrorBar(7:dataTable.nTrials,qpSlope(:,7:end),{@mean,@(x) std(x)/sqrt(length(x))},'lineprops',{'color',colors.darkQPColor});
+shadedErrorBar(7:dataTable.nTrials,qpSlope(:,7:end),errorPlot,'lineprops',{'color',colors.darkQPColor});
 hold on;
-shadedErrorBar(7:dataTable.nTrials,randSlope(:,7:end),{@mean,@(x) std(x)/sqrt(length(x))},'lineprops',{'color',colors.darkRandColor});
+shadedErrorBar(7:dataTable.nTrials,randSlope(:,7:end),errorPlot,'lineprops',{'color',colors.darkRandColor});
 legend('QP','Random');
 title(sprintf('Slope fits over trials'));
 ylabel('Slope parameter');
@@ -247,9 +250,9 @@ set(gca,'XScale','log');
 
 % Lineplot of change over time for SemiSat
 subplot(3,1,3);
-shadedErrorBar(7:dataTable.nTrials,qpSemiSat(:,7:end),{@mean,@(x) std(x)/sqrt(length(x))},'lineprops',{'color',colors.darkQPColor});
+shadedErrorBar(7:dataTable.nTrials,qpSemiSat(:,7:end),errorPlot,'lineprops',{'color',colors.darkQPColor});
 hold on;
-shadedErrorBar(7:dataTable.nTrials,randSemiSat(:,7:end),{@mean,@(x) std(x)/sqrt(length(x))},'lineprops',{'color',colors.darkRandColor});
+shadedErrorBar(7:dataTable.nTrials,randSemiSat(:,7:end),errorPlot,'lineprops',{'color',colors.darkRandColor});
 legend('QP','Random');
 title(sprintf('Semi-saturation fits over trials'));
 xlabel('Trial Number');

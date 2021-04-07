@@ -924,3 +924,10 @@ Q+ parameters
 slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.114 
 maxBOLD estimate = 1.690
 
+--------------------------------------------------------------
+FINAL VALUES
+--------------------------------------------------------------
+Simulated parameters:              slope: 0.200 semiSat: 0.570 beta: 1.000 sigma: 0.100 
+Max posterior QUEST+ parameters:   slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.114 
+Max BADS parameters:               slope: 0.167 semiSat: 0.587 beta: 1.000 sigma: 0.114 
+maxBOLD estimate: 1.688
