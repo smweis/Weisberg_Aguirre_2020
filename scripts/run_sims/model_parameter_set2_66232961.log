@@ -1,0 +1,933 @@
+/blue/stevenweisberg/stevenweisberg/MATLAB/projects/Weisberg_Aguirre_2020/scripts/run_sims
+c0706a-s6.ufhpc
+Wed Apr  7 08:51:49 EDT 2021
+mkdir: cannot create directory ‘/blue/stevenweisberg/stevenweisberg/qpfMRIResults/model_parameter_set2/’: File exists
+cp: cannot stat ‘/blue/stevenweisberg/stevenweisberg/qpfMRIResults/deploy_sim.sh’: No such file or directory
+cp: cannot stat ‘/blue/stevenweisberg/stevenweisberg/qpfMRIResults/sim_wrapper.sh’: No such file or directory
+------------------------------------------
+Setting up environment variables
+---
+LD_LIBRARY_PATH is .:/apps/matlab/mcr/2020b/v99/runtime/glnxa64:/apps/matlab/mcr/2020b/v99/bin/glnxa64:/apps/matlab/mcr/2020b/v99/sys/os/glnxa64:/apps/matlab/mcr/2020b/v99/sys/opengl/lib/glnxa64
+Warning: Executing startup failed in matlabrc.
+This indicates a potentially serious problem in your MATLAB setup, which should be resolved as soon as possible.  Error detected was:
+MATLAB:mpath:PathAlterationNotSupported
+Modifying the search path is not supported by MATLAB Compiler. Remove functions that modify the search path from your MATLAB code. To make files visible to your deployed application, add the parent folder to your MATLAB session.
+Warning: No stimulus domain specified. Defaulting to values between 0.01 and 1.
+> In qpfmriParams (line 182)
+In compiledSimulate (line 205)
+Stimulus domain added from input.
+Parameter slope specified as 0.20000
+Parameter semiSat specified as 0.57000
+Parameter beta specified as 1.00000
+Parameter sigma specified as 0.15000
+seed = 99seed = 104seed = 111seed = 111seed = 115seed = 101Initializing Q+. This may take a minute...
+Elapsed time is 7.306176 seconds.
+Simulated parameters:
+slope: 0.200 semiSat: 0.570 beta: 1.000 sigma: 0.150 
+
+Trial 1: baseline Stimulus Selection
+Stimulus: 0.010
+Output value 0.000
+
+Q+ parameters
+slope: 0.026 semiSat: 0.890 beta: 0.500 sigma: 0.010 
+maxBOLD estimate = 1.000
+
+
+Trial 2: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.364
+
+Q+ parameters
+slope: 0.055 semiSat: 0.670 beta: 1.250 sigma: 0.010 
+maxBOLD estimate = 1.000
+
+
+Trial 3: baseline Stimulus Selection
+Stimulus: 0.010
+Output value 0.284
+
+Q+ parameters
+slope: 0.055 semiSat: 0.670 beta: 1.250 sigma: 0.114 
+maxBOLD estimate = 1.250
+
+
+Trial 4: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.918
+
+Q+ parameters
+slope: 0.055 semiSat: 0.670 beta: 1.125 sigma: 0.062 
+maxBOLD estimate = 1.562
+
+
+Trial 5: baseline Stimulus Selection
+Stimulus: 0.010
+Output value 0.000
+
+Q+ parameters
+slope: 0.043 semiSat: 0.780 beta: 1.250 sigma: 0.062 
+maxBOLD estimate = 1.758
+
+
+Trial 6: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.742
+
+Q+ parameters
+slope: 0.043 semiSat: 0.780 beta: 0.969 sigma: 0.062 
+maxBOLD estimate = 2.197
+
+
+Trial 7: qplus Stimulus Selection
+Stimulus: 0.629
+Output value 0.750
+
+Q+ parameters
+slope: 0.043 semiSat: 0.780 beta: 0.969 sigma: 0.062 
+maxBOLD estimate = 2.129
+
+
+Trial 8: qplus Stimulus Selection
+Stimulus: 0.711
+Output value 0.908
+
+Q+ parameters
+slope: 0.043 semiSat: 0.780 beta: 0.969 sigma: 0.062 
+maxBOLD estimate = 2.062
+
+
+Trial 9: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.341
+
+Q+ parameters
+slope: 0.070 semiSat: 0.670 beta: 0.938 sigma: 0.062 
+maxBOLD estimate = 1.998
+
+
+Trial 10: baseline Stimulus Selection
+Stimulus: 0.010
+Output value 0.165
+
+Q+ parameters
+slope: 0.043 semiSat: 0.780 beta: 0.969 sigma: 0.062 
+maxBOLD estimate = 1.873
+
+
+Trial 11: qplus Stimulus Selection
+Stimulus: 0.753
+Output value 0.577
+
+Q+ parameters
+slope: 0.089 semiSat: 0.670 beta: 0.875 sigma: 0.062 
+maxBOLD estimate = 1.814
+
+
+Trial 12: qplus Stimulus Selection
+Stimulus: 0.629
+Output value 1.227
+
+Q+ parameters
+slope: 0.070 semiSat: 0.670 beta: 1.062 sigma: 0.114 
+maxBOLD estimate = 1.587
+
+
+Trial 13: qplus Stimulus Selection
+Stimulus: 0.464
+Output value 0.805
+
+Q+ parameters
+slope: 0.055 semiSat: 0.560 beta: 0.875 sigma: 0.114 
+maxBOLD estimate = 1.687
+
+
+Trial 14: qplus Stimulus Selection
+Stimulus: 0.423
+Output value 0.000
+
+Q+ parameters
+slope: 0.070 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.476
+
+
+Trial 15: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.208
+
+Q+ parameters
+slope: 0.070 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.476
+
+
+Trial 16: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.335
+
+Q+ parameters
+slope: 0.070 semiSat: 0.670 beta: 1.250 sigma: 0.114 
+maxBOLD estimate = 1.476
+
+
+Trial 17: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 0.629
+
+Q+ parameters
+slope: 0.055 semiSat: 0.670 beta: 0.938 sigma: 0.114 
+maxBOLD estimate = 1.845
+
+
+Trial 18: qplus Stimulus Selection
+Stimulus: 0.670
+Output value 1.513
+
+Q+ parameters
+slope: 0.089 semiSat: 0.560 beta: 0.875 sigma: 0.114 
+maxBOLD estimate = 1.730
+
+
+Trial 19: qplus Stimulus Selection
+Stimulus: 0.629
+Output value 1.754
+
+Q+ parameters
+slope: 0.113 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.513
+
+
+Trial 20: baseline Stimulus Selection
+Stimulus: 0.010
+Output value 0.329
+
+Q+ parameters
+slope: 0.234 semiSat: 0.560 beta: 0.750 sigma: 0.114 
+maxBOLD estimate = 1.608
+
+
+Trial 21: qplus Stimulus Selection
+Stimulus: 0.629
+Output value 1.644
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.250 sigma: 0.218 
+maxBOLD estimate = 1.206
+
+
+Trial 22: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.000
+
+Q+ parameters
+slope: 0.234 semiSat: 0.560 beta: 0.875 sigma: 0.166 
+maxBOLD estimate = 1.507
+
+
+Trial 23: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.637
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.319
+
+
+Trial 24: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.271
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.401
+
+
+Trial 25: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 0.592
+
+Q+ parameters
+slope: 0.234 semiSat: 0.560 beta: 0.875 sigma: 0.166 
+maxBOLD estimate = 1.489
+
+
+Trial 26: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 1.007
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.303
+
+
+Trial 27: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 0.488
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.384
+
+
+Trial 28: qplus Stimulus Selection
+Stimulus: 0.505
+Output value -0.126
+
+Q+ parameters
+slope: 0.234 semiSat: 0.560 beta: 1.031 sigma: 0.166 
+maxBOLD estimate = 1.341
+
+
+Trial 29: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 0.731
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.383
+
+
+Trial 30: baseline Stimulus Selection
+Stimulus: 0.010
+Output value -0.259
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.340
+
+
+Trial 31: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.133
+
+Q+ parameters
+slope: 0.234 semiSat: 0.560 beta: 1.031 sigma: 0.166 
+maxBOLD estimate = 1.423
+
+
+Trial 32: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 0.905
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.468
+
+
+Trial 33: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 0.800
+
+Q+ parameters
+slope: 0.234 semiSat: 0.560 beta: 1.031 sigma: 0.166 
+maxBOLD estimate = 1.422
+
+
+Trial 34: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 1.033
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.467
+
+
+Trial 35: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.501
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.421
+
+
+Trial 36: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.931
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.376
+
+
+Trial 37: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.773
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.462
+
+
+Trial 38: qplus Stimulus Selection
+Stimulus: 0.629
+Output value 0.749
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.417
+
+
+Trial 39: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.133
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.372
+
+
+Trial 40: baseline Stimulus Selection
+Stimulus: 0.010
+Output value -0.282
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.458
+
+
+Trial 41: qplus Stimulus Selection
+Stimulus: 0.464
+Output value 0.423
+
+Q+ parameters
+slope: 0.113 semiSat: 0.560 beta: 1.000 sigma: 0.114 
+maxBOLD estimate = 1.549
+
+
+Trial 42: qplus Stimulus Selection
+Stimulus: 0.423
+Output value -0.299
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.549
+
+
+Trial 43: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.561
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.938 sigma: 0.114 
+maxBOLD estimate = 1.646
+
+
+Trial 44: qplus Stimulus Selection
+Stimulus: 0.670
+Output value 1.789
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.543
+
+
+Trial 45: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.733
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.114 
+maxBOLD estimate = 1.640
+
+
+Trial 46: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 0.839
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.114 
+maxBOLD estimate = 1.588
+
+
+Trial 47: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.000
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.539
+
+
+Trial 48: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.836
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.938 sigma: 0.114 
+maxBOLD estimate = 1.635
+
+
+Trial 49: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 0.540
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.114 
+maxBOLD estimate = 1.533
+
+
+Trial 50: baseline Stimulus Selection
+Stimulus: 0.010
+Output value 0.287
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.485
+
+
+Trial 51: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.000
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.578
+
+
+Trial 52: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.286
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.938 sigma: 0.114 
+maxBOLD estimate = 1.676
+
+
+Trial 53: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 1.063
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.572
+
+
+Trial 54: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.285
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.938 sigma: 0.114 
+maxBOLD estimate = 1.670
+
+
+Trial 55: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.814
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.565
+
+
+Trial 56: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 0.732
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.114 
+maxBOLD estimate = 1.663
+
+
+Trial 57: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 0.993
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.114 
+maxBOLD estimate = 1.611
+
+
+Trial 58: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 1.206
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.114 
+maxBOLD estimate = 1.561
+
+
+Trial 59: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.730
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.114 
+maxBOLD estimate = 1.658
+
+
+Trial 60: baseline Stimulus Selection
+Stimulus: 0.010
+Output value 0.141
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.607
+
+
+Trial 61: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 1.203
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.556
+
+
+Trial 62: qplus Stimulus Selection
+Stimulus: 0.629
+Output value 1.268
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.938 sigma: 0.114 
+maxBOLD estimate = 1.654
+
+
+Trial 63: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 1.797
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.550
+
+
+Trial 64: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 1.015
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.647
+
+
+Trial 65: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.695
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.596
+
+
+Trial 66: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.597
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.695
+
+
+Trial 67: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 1.587
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.643
+
+
+Trial 68: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.154
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.745
+
+
+Trial 69: qplus Stimulus Selection
+Stimulus: 0.629
+Output value 1.042
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.691
+
+
+Trial 70: baseline Stimulus Selection
+Stimulus: 0.010
+Output value 0.144
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.638
+
+
+Trial 71: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 1.379
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.587
+
+
+Trial 72: qplus Stimulus Selection
+Stimulus: 0.505
+Output value -0.297
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.686
+
+
+Trial 73: qplus Stimulus Selection
+Stimulus: 0.670
+Output value 0.863
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.633
+
+
+Trial 74: qplus Stimulus Selection
+Stimulus: 0.670
+Output value 1.375
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.582
+
+
+Trial 75: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.776
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.681
+
+
+Trial 76: qplus Stimulus Selection
+Stimulus: 0.670
+Output value 0.944
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.628
+
+
+Trial 77: qplus Stimulus Selection
+Stimulus: 0.670
+Output value 1.828
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.730
+
+
+Trial 78: qplus Stimulus Selection
+Stimulus: 0.546
+Output value 1.033
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.676
+
+
+Trial 79: qplus Stimulus Selection
+Stimulus: 0.670
+Output value 1.568
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.624
+
+
+Trial 80: baseline Stimulus Selection
+Stimulus: 0.010
+Output value 0.000
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.725
+
+
+Trial 81: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 1.253
+
+Q+ parameters
+slope: 0.234 semiSat: 0.560 beta: 1.031 sigma: 0.166 
+maxBOLD estimate = 1.671
+
+
+Trial 82: qplus Stimulus Selection
+Stimulus: 0.670
+Output value 1.518
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.724
+
+
+Trial 83: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 1.451
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.670
+
+
+Trial 84: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.605
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.938 sigma: 0.114 
+maxBOLD estimate = 1.774
+
+
+Trial 85: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.928
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.663
+
+
+Trial 86: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 1.089
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.767
+
+
+Trial 87: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 1.206
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.712
+
+
+Trial 88: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 1.922
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.658
+
+
+Trial 89: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.451
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.938 sigma: 0.114 
+maxBOLD estimate = 1.762
+
+
+Trial 90: baseline Stimulus Selection
+Stimulus: 0.010
+Output value 0.160
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.652
+
+
+Trial 91: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.299
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.938 sigma: 0.114 
+maxBOLD estimate = 1.755
+
+
+Trial 92: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 1.430
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.645
+
+
+Trial 93: qplus Stimulus Selection
+Stimulus: 0.505
+Output value -0.154
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.748
+
+
+Trial 94: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 0.635
+
+Q+ parameters
+slope: 0.234 semiSat: 0.560 beta: 1.031 sigma: 0.166 
+maxBOLD estimate = 1.694
+
+
+Trial 95: maxBOLD Stimulus Selection
+Stimulus: 1.000
+Output value 1.077
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.747
+
+
+Trial 96: qplus Stimulus Selection
+Stimulus: 0.588
+Output value 0.149
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.692
+
+
+Trial 97: qplus Stimulus Selection
+Stimulus: 0.670
+Output value 1.267
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.062 sigma: 0.166 
+maxBOLD estimate = 1.639
+
+
+Trial 98: qplus Stimulus Selection
+Stimulus: 0.505
+Output value 0.767
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.742
+
+
+Trial 99: qplus Stimulus Selection
+Stimulus: 0.711
+Output value 0.743
+
+Q+ parameters
+slope: 0.144 semiSat: 0.560 beta: 0.969 sigma: 0.166 
+maxBOLD estimate = 1.687
+
+
+Trial 100: baseline Stimulus Selection
+Stimulus: 0.010
+Output value 0.000
+
+Q+ parameters
+slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.166 
+maxBOLD estimate = 1.634
+
+--------------------------------------------------------------
+FINAL VALUES
+--------------------------------------------------------------
+Simulated parameters:              slope: 0.200 semiSat: 0.570 beta: 1.000 sigma: 0.150 
+Max posterior QUEST+ parameters:   slope: 0.183 semiSat: 0.560 beta: 1.000 sigma: 0.166 
+Max BADS parameters:               slope: 0.183 semiSat: 0.564 beta: 1.000 sigma: 0.153 
+maxBOLD estimate: 1.669

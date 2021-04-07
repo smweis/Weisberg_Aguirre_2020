@@ -1,12 +1,12 @@
 #!/bin/bash
-#SBATCH --job-name=model_parameter_set1    # Job name
+#SBATCH --job-name=model_parameter_set2    # Job name
 #SBATCH --qos=stevenweisberg-b
 #SBATCH --mail-type=NONE          # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=stevenweisberg@ufl.edu     # Where to send mail
 #SBATCH --ntasks=1                    # Run on a single CPU
 #SBATCH --mem=8gb                     # Job memory request
-#SBATCH --time=04:00:00               # Time limit hrs:min:sec
-#SBATCH --output=model_parameter_set1_%A.log   # Standard output and error log
+#SBATCH --time=06:00:00               # Time limit hrs:min:sec
+#SBATCH --output=model_parameter_set2_%A.log   # Standard output and error log
 
 
 sleep 1
@@ -18,8 +18,8 @@ ml matlab
 export MCR_CACHE_ROOT=$SCRATCH
 
 # Names of the compiled folder and the output folder
-d='09.20.2020'
-outFolder='model_parameter_set1'
+d='04.06.2021'
+outFolder='model_parameter_set2'
 # Where is your compiled Matlab script?
 cd /blue/stevenweisberg/stevenweisberg/qpfMRIResults/compiled.$d
 # Make copies of the deploy_sim and sim_wrapper scripts for reproducibility
@@ -58,10 +58,10 @@ stimDomainLower .01 \
 stimDomainUpper 1.0 \
 stimDomainnDivisions 30 \
 stimDomainSpacing lin \
-nTrials 30 \
+nTrials 100 \
 trialLength $3 \
 TR $4 \
-param1Simulated .41 \
+param1Simulated .2 \
 param2Simulated .57 \
 param3Simulated 1.0 \
 param4Simulated $2 \

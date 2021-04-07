@@ -4,7 +4,7 @@ for RUN in {0001..0050}
 do
   for nOutcomes in 7 15
   do
-    for noise in .05 .15 .25
+    for noise in .05 .10 .15
     do
       for trialLength in 8 12
       do

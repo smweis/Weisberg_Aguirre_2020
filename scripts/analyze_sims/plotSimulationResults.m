@@ -20,10 +20,12 @@ function summaryStats = plotSimulationResults(resultsDir,simulationParameters,si
 % Example
 %{
 
-resultsDir = 'C:\Users\stevenweisberg\Documents\MATLAB\projects\Weisberg_Aguirre_2020\results\Paper_Results\model_parameter_set1';
+resultsDir = 'C:\Users\stevenweisberg\Documents\MATLAB\projects\Weisberg_Aguirre_2020\results\Paper_Results\model_parameter_set2';
 
-simulationParameters = {'nOutcomes','fMRInoise','trialLength','TR'};
-simulationValues = {7,.15,12,800};
+resultsDir = '/blue/stevenweisberg/stevenweisberg/MATLAB/projects/Weisberg_Aguirre_2020/results/Paper_Results/model_parameter_set2';
+
+simulationParameters = {'fMRInoise'};
+simulationValues = {.05};
 
 figName = 'test';
 savefig = false;
@@ -202,27 +204,33 @@ set(fig3,'color','w');
 subplot(3,1,1);
 
 % Plot maxBOLD fit over trials
-shadedErrorBar(7:dataTable.nTrials(1),qpRows.maxBOLDoverTrials(:,7:end),...,
+shadedErrorBar(7:dataTable.nTrials(1),abs(qpRows.maxBOLDoverTrials(:,7:end) - qpRows.maxBOLDSimulated(1))/qpRows.maxBOLDSimulated(1),...,
     {@mean,@(x) std(x)/sqrt(length(x))},'lineprops',{'color',colors.darkQPColor});
 hold on;
-shadedErrorBar(7:dataTable.nTrials,randRows.maxBOLDoverTrials(:,7:end),...,
+shadedErrorBar(7:dataTable.nTrials,abs(randRows.maxBOLDoverTrials(:,7:end) - randRows.maxBOLDSimulated(1))/randRows.maxBOLDSimulated(1),...,
     {@mean,@(x) std(x)/sqrt(length(x))},'lineprops',{'color',colors.darkRandColor});
 legend('QP','Random');
 ylabel('Max BOLD estimate (% signal change)');
 title(sprintf('MaxBOLD fits over trials'));
-ylim([0,2.5]);
-xlim([7,30]);
-yline(dataTable.maxBOLDSimulated(1),'-','Veridical','LabelHorizontalAlignment','left','HandleVisibility','off');
+ylim([0,1]);
+xlim([7,max(dataTable.nTrials)]);
+set(gca,'XScale','log');
+%yline(dataTable.maxBOLDSimulated(1),'-','Veridical','LabelHorizontalAlignment','left','HandleVisibility','off');
 
 % Lineplot of change over time for slope/semisat
 for i = 1:length(qpRows.maxBOLDoverTrials)
-    qpSlope(i,:) = qpRows.psiParamsQuest{i}(:,1);
-    qpSemiSat(i,:) = qpRows.psiParamsQuest{i}(:,2);
+    qpSlope(i,:) = abs(qpRows.psiParamsBADS{i}(:,1) - qpRows.simulatedPsiParams(i,1))/qpRows.simulatedPsiParams(i,1);
+    qpSemiSat(i,:) = abs(qpRows.psiParamsBADS{i}(:,2) - qpRows.simulatedPsiParams(i,2))/qpRows.simulatedPsiParams(i,2);
+    qpSlopeNonNorm(i,:) = qpRows.psiParamsBADS{i}(:,1);
+    qpSemiSatNonNorm(i,:) = qpRows.psiParamsBADS{i}(:,2);
 end
 for i = 1:length(randRows.maxBOLDoverTrials)
-    randSlope(i,:) = randRows.psiParamsQuest{i}(:,1);
-    randSemiSat(i,:) = randRows.psiParamsQuest{i}(:,2);
+    randSlope(i,:) = abs(randRows.psiParamsBADS{i}(:,1) - randRows.simulatedPsiParams(i,1))/randRows.simulatedPsiParams(i,1);
+    randSemiSat(i,:) = abs(randRows.psiParamsBADS{i}(:,2) - randRows.simulatedPsiParams(i,2))/randRows.simulatedPsiParams(i,2);
+    randSlopeNonNorm(i,:) = randRows.psiParamsBADS{i}(:,1);
+    randSemiSatNonNorm(i,:) = randRows.psiParamsBADS{i}(:,2);
 end
+
 
 % Lineplot of change over time for Slope
 subplot(3,1,2);
@@ -233,8 +241,9 @@ legend('QP','Random');
 title(sprintf('Slope fits over trials'));
 ylabel('Slope parameter');
 ylim([0,1]);
-xlim([7,30]);
-yline(dataTable.simulatedPsiParams(1,1),'-','Veridical','LabelHorizontalAlignment','left','HandleVisibility','off');
+xlim([7,max(dataTable.nTrials)]);
+set(gca,'XScale','log');
+%yline(dataTable.simulatedPsiParams(1,1),'-','Veridical','LabelHorizontalAlignment','left','HandleVisibility','off');
 
 % Lineplot of change over time for SemiSat
 subplot(3,1,3);
@@ -245,9 +254,10 @@ legend('QP','Random');
 title(sprintf('Semi-saturation fits over trials'));
 xlabel('Trial Number');
 ylabel('Semi-sat parameter');
-xlim([7,30]);
+xlim([7,max(dataTable.nTrials)]);
 ylim([0,1]);
-yline(dataTable.simulatedPsiParams(1,2),'-','Veridical','LabelHorizontalAlignment','left','HandleVisibility','off');
+set(gca,'XScale','log');
+%yline(dataTable.simulatedPsiParams(1,2),'-','Veridical','LabelHorizontalAlignment','left','HandleVisibility','off');
 
 % Title
 sgtitle(sprintf('Change in parameter fits over trials'));
@@ -257,5 +267,20 @@ if savefig
     fig3Name = fullfile('results','figs',strcat('fig3_',figName));
     print(fig3Name,'-dpng','-r300');
 end
+
+figure;
+randCorr = corr(randSlope,randRows.maxBOLDoverTrials);
+qpCorr = corr(qpSlope,qpRows.maxBOLDoverTrials);
+errorbar(mean(qpCorr,'omitnan'),std(qpCorr),'-','Color',colors.darkQPColor);
+hold on;
+errorbar(mean(randCorr,'omitnan'),std(randCorr),'-','Color',colors.darkRandColor);
+legend('QP','Random');
+ylim([-.5,.5]);
+set(gca,'XScale','log');
+% Title
+title(sprintf('Correlation between maxBOLD and slope parameter'));
+xlabel('Trial Number');
+ylabel('Pearson correlation between maxBOLD and slope');
+
 
 end
